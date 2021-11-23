@@ -8,6 +8,7 @@ const $body = document.body,
       ui = new UI();
 
 // DOM Events
+localStorage.setItem('post','NO')
 
 const addProperty = async (property = {}) => { 
   try {
@@ -19,16 +20,18 @@ const addProperty = async (property = {}) => {
                     body: JSON.stringify(property)
                 });
                 const datos =  await res.json();
-                if(!res.ok) throw {status:res.status,message:res.statusText}
-                //location.reload()
-    
-  } catch (error) {
+                if(!res.ok) throw {status:res.status,message:res.statusText}   
+                localStorage.setItem('post','SI')
+                location.reload();
+              }   catch (error) {
       console.log(error.message)
-  }
+  } 
 }
 d.addEventListener('click', e=> {
   if (e.target.matches('.cliente')) { 
-    ui.getPage({url:'/form.html',success:(resp) => {$body.innerHTML = resp} })
+    ui.getPage({url:'/form.html',success:(resp) => {$body.innerHTML = resp} }
+    )
+    localStorage.setItem('post','NO')
   }
 })
 d.addEventListener('keypress', async e=> { 
@@ -46,9 +49,7 @@ d.addEventListener('keypress', async e=> {
         console.log(typeof $input.value)
         if (parseInt($input.value) === c.DNI) { 
           propietario = c
-        }
-
-      });
+        }});
       console.log(propietario)
       if (propietario) { 
          /* $tabla.insertAdjacentHTML('afterend',
@@ -67,12 +68,21 @@ d.addEventListener('keypress', async e=> {
 
 })
 
-document.addEventListener('DOMContentLoaded', e=>{
-  ui.getPage({url:'/cliente.html',
+window.addEventListener('load', e=>{
+  if (window.localStorage.getItem('post') === 'NO') { 
+    ui.getPage({url:'/cliente.html',
       success: (resp) => { 
         $body.innerHTML = resp;
       }  
-});
+    })
+  } else { 
+    ui.getPage({url:'/succes.html',
+    success: (resp) => { 
+      $body.innerHTML = resp;
+      }  
+    })
+  }
+  ;
 })
 
   d.addEventListener("submit", function (e) {
@@ -120,8 +130,6 @@ document.addEventListener('DOMContentLoaded', e=>{
                         </div>
                       </div>`)
         addProperty(property)
-
-
     }
     
   });
