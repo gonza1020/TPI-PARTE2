@@ -4,12 +4,8 @@ import { UI } from "./UI.js";
 const d = document
 // DOM Events
 
-<<<<<<< HEAD
 const $body = document.body,
       ui = new UI();
-=======
-const $body = d.body;
->>>>>>> abb69cfaa53746412c1c3d64f502b88ab340d925
 
 d.addEventListener('keypress', async e=> { 
   if (e.key == "Enter" ) { 
@@ -50,12 +46,7 @@ d.addEventListener('keypress', async e=> {
 })
 
 document.addEventListener('DOMContentLoaded', e=>{
-<<<<<<< HEAD
-  ui.getPage({url:'/form.html',
-=======
-  const ui = new UI(); 
   ui.getPage({url:'/cliente.html',
->>>>>>> abb69cfaa53746412c1c3d64f502b88ab340d925
       success: (resp) => { 
         $body.innerHTML = resp;
       }  
