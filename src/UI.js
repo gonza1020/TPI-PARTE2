@@ -1,5 +1,8 @@
 // UI Constructor
 export class UI {
+
+
+  // 
     // Add a new Product
     addProduct(product) {
       const productList = document.getElementById("product-list");
