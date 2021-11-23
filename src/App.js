@@ -4,14 +4,14 @@ import { UI } from "./UI.js";
 const d = document
 // DOM Events
 
-const $body = document.body;
+const $body = d.body;
 
 d.addEventListener('keypress', async e=> { 
   if (e.key == "Enter" ) { 
     e.preventDefault();
     try {
-      let cliente = null;
-      const $div = d.querySelector('.container-buscador')
+      let cliente = null
+      const $tabla = d.querySelector('.table')
       const $input = d.querySelector('form input')
       let res = await fetch ('http://localhost:3000/clientes');
       let clientes = await res.json();
@@ -27,8 +27,15 @@ d.addEventListener('keypress', async e=> {
       });
       console.log(cliente)
       if (cliente) { 
-        $div.insertAdjacentHTML('afterend',`<p><mark>Nombre: ${cliente.NombreApellido}</mark></p>
-        <p><mark>DNI: ${cliente.DNI}</mark></p>`)
+        
+         /* $tabla.insertAdjacentHTML('afterend',
+        `<div>
+          <p><mark>Nombre: ${cliente.NombreApellido}</mark></p>
+          <p><mark>DNI: ${cliente.DNI}</mark></p>`)  */
+
+        $tabla.querySelector(".client-table").rows[0].cells[0].innerHTML = `<p>${cliente.NombreApellido}</p>`
+        $tabla.querySelector(".client-table").rows[0].cells[1].innerHTML = `<p>${cliente.DNI}</p>`
+        $tabla.querySelector(".client-table").rows[0].cells[2].innerHTML = `<button type="button" class="btn btn-primary">Seleccionar</button>`
       }
     } catch (error) {
       
@@ -39,7 +46,7 @@ d.addEventListener('keypress', async e=> {
 
 document.addEventListener('DOMContentLoaded', e=>{
   const ui = new UI(); 
-  ui.getPage({url:'/form.html',
+  ui.getPage({url:'/cliente.html',
       success: (resp) => { 
         $body.innerHTML = resp;
       }  
