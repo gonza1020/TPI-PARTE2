@@ -1,0 +1,31 @@
+{% extends 'layout.html'%}
+
+{%load filters %}
+
+{% block title%}
+Formuario en Django
+{% endblock %}
+
+{% block content %}
+<h1 class="title">Formularios en Django</h1>
+
+{% if form.errors %}
+    <strong class='rojo'>
+        Hay errores en el Formulario
+    </strong>
+{% endif %}
+
+<!--Get viaja por la URL, Post viaja por la cabecera http-->
+<form action= "" method="POST">
+
+    {% csrf_token %} <!--Token de seguridad en cookies-->
+
+    {{form}}
+
+    <input type="submit" value="Guardar"/>
+
+
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'layout.html'%}
+
+{% block title%} {{title}} {% endblock %}
+
+{% block content%}
+<!--Esto es un comentario en HTML-->
+
+{% comment 'Esto es un comentario' %}{% endcomment %}
+
+<h1 class="title">{{title}}</h1>
+
+<p>{{mi_variable}}</p>
+
+{% if nombre and nombre == 'Juan Cruz Carrizo'%}
+
+    <p>{{nombre}}</p>
+
+{% else %}
+
+    <p><strong>El nombre no existe</strong></p>
+
+{% endif %}
+
+<h3>Listado de lenguajes de Programacion</h3>
+<ul>
+    {% for lenguaje in  lenguajes%}
+
+        <li>{{lenguaje}} {{forloop.revcounter}}</li>
+
+    {%empty%}
+        <p>No hay lenguajes que mostrar</p>
+    {% endfor %}
+</ul>
+
+{% include 'fecha-actual.html' %}
+{% endblock %}

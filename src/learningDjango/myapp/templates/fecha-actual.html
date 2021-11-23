@@ -1,0 +1,14 @@
+<br/>
+<hr/>
+<br/>
+<h1>Bienvenido {{nombre}}</h1>
+<h2>Estamos a 2021</h2>
+
+<p>Años hasta el 2050 pares</p>
+<ul>
+    {% for year in years %}
+        {% if year|divisibleby:2 == True  %}
+            <li>{{year}}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
