@@ -2,6 +2,19 @@ import { Product } from "./Product.js";
 import { UI } from "./UI.js";
 
 // DOM Events
+
+const $body = document.body;
+
+document.addEventListener('DOMContentLoaded', e=>{
+  const ui = new UI(); 
+  ui.getPage({url:'/form.html',
+      success: (resp) => { 
+        $body.innerHTML = resp;
+      }  
+});
+})
+
+
 document
   .getElementById("product-form")
   .addEventListener("submit", function (e) {
@@ -15,6 +28,7 @@ document
 
     // Create a new Oject Product
     const product = new Product(name, price, year);
+    console.log(JSON.stringify(product))
 
     // Create a new UI instance
     const ui = new UI();
