@@ -1,6 +1,8 @@
-import { Product } from "./Product.js";
+import {Property}from "./Property.js";
 import { UI } from "./UI.js";
 
+const d = document,
+    $form = d.getElementById("propiedad-form");
 // DOM Events
 
 const $body = document.body;
@@ -13,23 +15,28 @@ document.addEventListener('DOMContentLoaded', e=>{
       }  
 });
 })
-
-
-document
-  .getElementById("product-form")
-  .addEventListener("submit", function (e) {
+  $form.addEventListener("submit", function (e) {
     // Override the default Form behaviour
     e.preventDefault();
 
     // Getting Form Values
-    const name = document.getElementById("name").value,
-      price = document.getElementById("price").value,
-      year = document.getElementById("year").value;
+    const name = d.getElementById("name").value,
+      ubication = d.getElementById("ubication").value,
+      tel = d.getElementById("tel").value,
+      ant = d.getElementById("ant").value,
+      services = d.getElementById("services").value,
+      multi = d.getElementById("multi").value,
+      type = d.getElementById("type").value,
+      env = d.getElementById("env"),
+      valueSelect = env.options[env.selectedIndex].value;
+      let availability = 'Disponible';
 
+      if(d.getElementById("exampleRadios2").checked == true){
+          availability = 'No disponible';
+      }
     // Create a new Oject Product
-    const product = new Product(name, price, year);
-    console.log(JSON.stringify(product))
-
+    const property = new Property(name, ubication, tel,valueSelect,ant,services,multi,type,availability);
+    console.log(property);
     // Create a new UI instance
     const ui = new UI();
 
