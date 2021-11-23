@@ -3,15 +3,38 @@ import { UI } from "./UI.js";
 
 //variables
 const d = document
-const $body = d.body;
 let propietario;
+const $body = document.body,
+      ui = new UI();
 
+// DOM Events
 
+const addProperty = async (property = {}) => { 
+  try {
+    const res = await fetch(`http://localhost:3000/propiedades`,
+                {   method:'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(property)
+                });
+                const datos =  await res.json();
+                if(!res.ok) throw {status:res.status,message:res.statusText}
+                //location.reload()
+    
+  } catch (error) {
+      console.log(error.message)
+  }
+}
+d.addEventListener('click', e=> {
+  if (e.target.matches('.cliente')) { 
+    ui.getPage({url:'/form.html',success:(resp) => {$body.innerHTML = resp} })
+  }
+})
 d.addEventListener('keypress', async e=> { 
   if (e.key == "Enter" ) { 
     e.preventDefault();
     try {
-      let cliente = null
       const $tabla = d.querySelector('.table')
       const $input = d.querySelector('form input')
       let res = await fetch ('http://localhost:3000/clientes');
@@ -28,15 +51,14 @@ d.addEventListener('keypress', async e=> {
       });
       console.log(propietario)
       if (propietario) { 
-        
          /* $tabla.insertAdjacentHTML('afterend',
         `<div>
           <p><mark>Nombre: ${cliente.NombreApellido}</mark></p>
           <p><mark>DNI: ${cliente.DNI}</mark></p>`)  */
 
-        $tabla.querySelector(".client-table").rows[0].cells[0].innerHTML = `<p>${cliente.NombreApellido}</p>`
-        $tabla.querySelector(".client-table").rows[0].cells[1].innerHTML = `<p>${cliente.DNI}</p>`
-        $tabla.querySelector(".client-table").rows[0].cells[2].innerHTML = `<button type="button" class="btn btn-primary">Seleccionar</button>`
+        $tabla.querySelector(".client-table").rows[0].cells[0].innerHTML = `<p>${propietario.NombreApellido}</p>`
+        $tabla.querySelector(".client-table").rows[0].cells[1].innerHTML = `<p>${propietario.DNI}</p>`
+        $tabla.querySelector(".client-table").rows[0].cells[2].innerHTML = `<button type="button" class="btn cliente btn-primary">Seleccionar</button>`
       }
     } catch (error) {
       
@@ -46,7 +68,6 @@ d.addEventListener('keypress', async e=> {
 })
 
 document.addEventListener('DOMContentLoaded', e=>{
-  const ui = new UI(); 
   ui.getPage({url:'/cliente.html',
       success: (resp) => { 
         $body.innerHTML = resp;
@@ -57,8 +78,8 @@ document.addEventListener('DOMContentLoaded', e=>{
   d.addEventListener("submit", function (e) {
     if(e.target.matches('#propiedad-form')){
           // Override the default Form behaviour
-    e.preventDefault();
-
+      e.preventDefault();
+      e.stopPropagation();
     // Getting Form Values
     const name = d.getElementById("name").value,
       ubication = d.getElementById("ubication").value,
@@ -78,8 +99,30 @@ document.addEventListener('DOMContentLoaded', e=>{
                 const property = new Property(name, ubication, tel,valueSelect,ant,services,multi,type,availability,prop);
                 console.log(property);
                 console.log(multi);
+                  $body.insertAdjacentHTML('beforeend',`
+                  <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Domus 2.0</h5>
+                          </div>
+                          <div class="modal-body">
+                            PROPIEDAD CARGADA CON EXITO<br>
+                            <div>
+                            <p><b>Propiedad: ${property.nombre}</b></p> 
+                            <p><b>Ubicacion: ${property.ubicacion}</b></p> 
+                            <p><b>Telefono: ${property.telefono}</b></p> 
+                            <p><b>Propietario: ${property.propietario.NombreApellido}</b></p>
+                            <p><b>DNI: ${property.propietario.DNI}</b></p>
+                  </div>
+                          </div>
+                          <div class="modal-footer">
+                          </div>
+                        </div>
+                      </div>`)
+        addProperty(property)
+
 
     }
-
+    
   });
 
