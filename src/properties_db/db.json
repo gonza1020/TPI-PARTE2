@@ -37,6 +37,27 @@
       "disponibilidad": "disponible",
       "tipo": "casa",
       "propietario": "Matias Acosta"
+    },
+    {
+      "id": 4,
+      "nombre": "CAsa quinta ",
+      "ubicacion": "Bella Vista Corrientes",
+      "telefono": "3777123456",
+      "cantAmbientes": "1",
+      "antiguedad": "4",
+      "servicios": "wifi-pileta",
+      "multimedia": "",
+      "tipo": "ALquiler",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 2,
+        "NombreApellido": "Gonzalo Zoloaga",
+        "DNI": 42792711,
+        "CUIL": 20427927114,
+        "FechaNacimiento": "21/09/00",
+        "Telefono": 3777523238,
+        "Email": "gonzalozoloaga44@gmail.com"
+      }
     }
   ],
   "clientes": [
@@ -48,6 +69,24 @@
       "FechaNacimiento": "18/12/00",
       "Telefono": 3794267995,
       "Email": "sam@email.com"
+    },
+    {
+      "id": 2,
+      "NombreApellido": "Gonzalo Zoloaga",
+      "DNI": 42792711,
+      "CUIL": 20427927114,
+      "FechaNacimiento": "21/09/00",
+      "Telefono": 3777523238,
+      "Email": "gonzalozoloaga44@gmail.com"
+    },
+    {
+      "id": 3,
+      "NombreApellido": "Juan Cruz Carrizo",
+      "DNI": 43346436,
+      "CUIL": 20433464363,
+      "FechaNacimiento": "05/05/00",
+      "Telefono": 3777646767,
+      "Email": "juancarrizoast@gmail.com"
     }
   ]
 }
