@@ -1,5 +1,6 @@
 // UI Constructor
 export class UI {
+  
    getPage = (options) => { 
     let {url,success,error} = options
     const xhr = new XMLHttpRequest(); 
