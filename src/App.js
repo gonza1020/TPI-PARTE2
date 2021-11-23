@@ -1,11 +1,41 @@
 import {Property}from "./Property.js";
 import { UI } from "./UI.js";
 
-const d = document,
-    $form = d.getElementById("propiedad-form");
+const d = document
 // DOM Events
 
 const $body = document.body;
+
+d.addEventListener('keypress', async e=> { 
+  if (e.key == "Enter" ) { 
+    e.preventDefault();
+    try {
+      let cliente = null;
+      const $div = d.querySelector('.container-buscador')
+      const $input = d.querySelector('form input')
+      let res = await fetch ('http://localhost:3000/clientes');
+      let clientes = await res.json();
+      if (!res.ok) throw {error}
+      console.log(clientes)
+      console.log($input.value)
+      clientes.forEach(c => {
+        console.log(typeof $input.value)
+        if (parseInt($input.value) === c.DNI) { 
+          cliente = c
+        }
+
+      });
+      console.log(cliente)
+      if (cliente) { 
+        $div.insertAdjacentHTML('afterend',`<p><mark>Nombre: ${cliente.NombreApellido}</mark></p>
+        <p><mark>DNI: ${cliente.DNI}</mark></p>`)
+      }
+    } catch (error) {
+      
+    }
+  }
+
+})
 
 document.addEventListener('DOMContentLoaded', e=>{
   const ui = new UI(); 
@@ -33,7 +63,7 @@ document.addEventListener('DOMContentLoaded', e=>{
       valueSelect = env.options[env.selectedIndex].value;
       let availability = 'Disponible';
 
-      if(d.getElementById("exampleRadios2").checked == true){
+      if($form.getElementById("exampleRadios2").checked == true){
           availability = 'No disponible';
       }
                 // Create a new Oject Product
