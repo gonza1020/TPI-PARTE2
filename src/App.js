@@ -4,7 +4,8 @@ import { UI } from "./UI.js";
 const d = document
 // DOM Events
 
-const $body = document.body;
+const $body = document.body,
+      ui = new UI();
 
 d.addEventListener('keypress', async e=> { 
   if (e.key == "Enter" ) { 
@@ -38,7 +39,6 @@ d.addEventListener('keypress', async e=> {
 })
 
 document.addEventListener('DOMContentLoaded', e=>{
-  const ui = new UI(); 
   ui.getPage({url:'/form.html',
       success: (resp) => { 
         $body.innerHTML = resp;
@@ -70,8 +70,29 @@ document.addEventListener('DOMContentLoaded', e=>{
                 const property = new Property(name, ubication, tel,valueSelect,ant,services,multi,type,availability);
                 console.log(property);
                 console.log(multi);
+                  $body.insertAdjacentHTML('beforeend',`
+                  <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Domus 2.0</h5>
+                          </div>
+                          <div class="modal-body">
+                            PROPIEDAD CARGADA CON EXITO<br>
+                            <div>
+                            <p><b>Propiedad: ${property.nombre}</b></p> 
+                            <p><b>Ubicacion: ${property.ubicacion}</b></p> 
+                  <p><b>Telefono: ${property.telefono}</b></p> 
+                  </div>
+                          </div>
+                          <div class="modal-footer">
+                          </div>
+                        </div>
+                      </div>`)
+
+                  
+                         
 
     }
-
+    
   });
 
