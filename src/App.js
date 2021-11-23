@@ -5,6 +5,16 @@ const d = document,
     $form = d.getElementById("propiedad-form");
 // DOM Events
 
+const $body = document.body;
+
+document.addEventListener('DOMContentLoaded', e=>{
+  const ui = new UI(); 
+  ui.getPage({url:'/form.html',
+      success: (resp) => { 
+        $body.innerHTML = resp;
+      }  
+});
+})
   $form.addEventListener("submit", function (e) {
     // Override the default Form behaviour
     e.preventDefault();
