@@ -39,7 +39,7 @@ d.addEventListener('keypress', async e=> {
 
 document.addEventListener('DOMContentLoaded', e=>{
   const ui = new UI(); 
-  ui.getPage({url:'./form.html',
+  ui.getPage({url:'/form.html',
       success: (resp) => { 
         $body.innerHTML = resp;
       }  
@@ -66,12 +66,12 @@ document.addEventListener('DOMContentLoaded', e=>{
       if(d.getElementById("exampleRadios2").checked == true){
           availability = 'No disponible';
       }
-
+                // Create a new Oject Product
+                const property = new Property(name, ubication, tel,valueSelect,ant,services,multi,type,availability);
+                console.log(property);
+                console.log(multi);
 
     }
-          // Create a new Oject Product
-          const property = new Property(name, ubication, tel,valueSelect,ant,services,multi,type,availability);
-          console.log(property);
-          console.log(multi);
+
   });
 
