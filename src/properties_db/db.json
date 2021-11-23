@@ -1,52 +1,53 @@
 {
-    "propiedades": [ {
-        "id": 1,
-        "titulo": "Lorem, ipsum dolor",
-        "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid harum sed saepe ut voluptatum possimus maxime maiores, delectus odio exercitationem eligendi nisi cupiditate quo tempore quaerat dolore. Consectetur, iusto provident.",
-        "multimedia": "https://www.arrambide.com/wp-content/uploads/2020/01/20.jpg",
-        "servicios": [],
-        "antiguedad": 2,
-        "precio": "$250.000",
-        "ambientes": 2,
-        "disponibilidad": "disponible",
-        "tipo": "departamento"
-    }, 
+  "propiedades": [
     {
-        "id": 2,
-        "titulo": "Lorem, ipsum dolor",
-        "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid harum sed saepe ut voluptatum possimus maxime maiores, delectus odio exercitationem eligendi nisi cupiditate quo tempore quaerat dolore. Consectetur, iusto provident.",
-        "multimedia": "https://www.arrambide.com/wp-content/uploads/2020/01/20.jpg",
-        "servicios": [],
-        "antiguedad": 3,
-        "precio": "$150.000",
-        "ambientes": 2,
-        "disponibilidad": "disponible",
-        "tipo": "departamento",
-        "propietario": "Matias Acosta"
+      "id": 1,
+      "titulo": "Lorem, ipsum dolor",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid harum sed saepe ut voluptatum possimus maxime maiores, delectus odio exercitationem eligendi nisi cupiditate quo tempore quaerat dolore. Consectetur, iusto provident.",
+      "multimedia": "https://www.arrambide.com/wp-content/uploads/2020/01/20.jpg",
+      "servicios": [],
+      "antiguedad": 2,
+      "precio": "$250.000",
+      "ambientes": 2,
+      "disponibilidad": "disponible",
+      "tipo": "departamento"
     },
     {
-        "id": 3,
-        "titulo": "Lorem, ipsum dolor",
-        "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid harum sed saepe ut voluptatum possimus maxime maiores, delectus odio exercitationem eligendi nisi cupiditate quo tempore quaerat dolore. Consectetur, iusto provident.",
-        "multimedia": "https://www.arrambide.com/wp-content/uploads/2020/01/20.jpg",
-        "servicios": [],
-        "antiguedad": 2,
-        "precio": "$25.000",
-        "ambientes": 2,
-        "disponibilidad": "disponible",
-        "tipo": "casa",
-        "propietario": "Matias Acosta"
+      "id": 2,
+      "titulo": "Lorem, ipsum dolor",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid harum sed saepe ut voluptatum possimus maxime maiores, delectus odio exercitationem eligendi nisi cupiditate quo tempore quaerat dolore. Consectetur, iusto provident.",
+      "multimedia": "https://www.arrambide.com/wp-content/uploads/2020/01/20.jpg",
+      "servicios": [],
+      "antiguedad": 3,
+      "precio": "$150.000",
+      "ambientes": 2,
+      "disponibilidad": "disponible",
+      "tipo": "departamento",
+      "propietario": "Matias Acosta"
+    },
+    {
+      "id": 3,
+      "titulo": "Lorem, ipsum dolor",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid harum sed saepe ut voluptatum possimus maxime maiores, delectus odio exercitationem eligendi nisi cupiditate quo tempore quaerat dolore. Consectetur, iusto provident.",
+      "multimedia": "https://www.arrambide.com/wp-content/uploads/2020/01/20.jpg",
+      "servicios": [],
+      "antiguedad": 2,
+      "precio": "$25.000",
+      "ambientes": 2,
+      "disponibilidad": "disponible",
+      "tipo": "casa",
+      "propietario": "Matias Acosta"
     }
-    ], 
-    "clientes": [
-        {   "id":1,
-            "NombreApellido": "Matias Acosta",
-            "DNI": 43109981,
-            "CUIL":20431099811,
-            "FechaNacimiento":"18/12/00",
-            "Telefono": 3794267995,
-            "Email": "sam@email.com"
-        }
-    ]
-
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "NombreApellido": "Matias Acosta",
+      "DNI": 43109981,
+      "CUIL": 20431099811,
+      "FechaNacimiento": "18/12/00",
+      "Telefono": 3794267995,
+      "Email": "sam@email.com"
+    }
+  ]
 }

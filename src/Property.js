@@ -1,8 +1,8 @@
 // Product Constructor
 export class Property {
-    static id = 0;
+    static id = 3;
     constructor(nombre, ubicacion, telefono,cantAmbientes,antiguedad,servicios,multimedia,tipo,disponibilidad,propietario) {
-        this.codProp = ++this.constructor.id;
+        this.id = ++this.constructor.id;
         this.nombre = nombre;
         this.ubicacion = ubicacion;
         this.telefono = telefono;
