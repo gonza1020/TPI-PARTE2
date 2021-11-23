@@ -3,11 +3,14 @@ import { UI } from "./UI.js";
 
 //variables
 const d = document
-let propietario;
+let propietario,
+    idProp;
 const $body = document.body,
       ui = new UI();
 
 // DOM Events
+
+
 
 const addProperty = async (property = {}) => { 
   try {
@@ -40,16 +43,12 @@ d.addEventListener('keypress', async e=> {
       let res = await fetch ('http://localhost:3000/clientes');
       let clientes = await res.json();
       if (!res.ok) throw {error}
-      console.log(clientes)
-      console.log($input.value)
       clientes.forEach(c => {
-        console.log(typeof $input.value)
         if (parseInt($input.value) === c.DNI) { 
           propietario = c
         }
 
       });
-      console.log(propietario)
       if (propietario) { 
          /* $tabla.insertAdjacentHTML('afterend',
         `<div>
@@ -66,8 +65,18 @@ d.addEventListener('keypress', async e=> {
   }
 
 })
+d.addEventListener('DOMContentLoaded', async e =>{
+  try {
+    let resProp = await fetch ('http://localhost:3000/propiedades');
+    let propiedades = await resProp.json();
+    idProp = propiedades.length
+  } catch (error) {
+    console.log(error)
+  }
+})
 
 document.addEventListener('DOMContentLoaded', e=>{
+
   ui.getPage({url:'/cliente.html',
       success: (resp) => { 
         $body.innerHTML = resp;
@@ -79,7 +88,7 @@ document.addEventListener('DOMContentLoaded', e=>{
     if(e.target.matches('#propiedad-form')){
           // Override the default Form behaviour
       e.preventDefault();
-      e.stopPropagation();
+
     // Getting Form Values
     const name = d.getElementById("name").value,
       ubication = d.getElementById("ubication").value,
@@ -95,8 +104,10 @@ document.addEventListener('DOMContentLoaded', e=>{
       if(d.getElementById("exampleRadios2").checked == true){
           availability = 'No disponible';
       }
+                console.log(id);
+                idProp++;
                 // Create a new Oject Product
-                const property = new Property(name, ubication, tel,valueSelect,ant,services,multi,type,availability,prop);
+                const property = new Property(id,name, ubication, tel,valueSelect,ant,services,multi,type,availability,prop);
                 console.log(property);
                 console.log(multi);
                   $body.insertAdjacentHTML('beforeend',`
