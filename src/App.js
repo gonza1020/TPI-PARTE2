@@ -15,8 +15,10 @@ document.addEventListener('DOMContentLoaded', e=>{
       }  
 });
 })
-  $form.addEventListener("submit", function (e) {
-    // Override the default Form behaviour
+
+  d.addEventListener("submit", function (e) {
+    if(e.target.matches('#propiedad-form')){
+          // Override the default Form behaviour
     e.preventDefault();
 
     // Getting Form Values
@@ -34,25 +36,12 @@ document.addEventListener('DOMContentLoaded', e=>{
       if(d.getElementById("exampleRadios2").checked == true){
           availability = 'No disponible';
       }
-    // Create a new Oject Product
-    const property = new Property(name, ubication, tel,valueSelect,ant,services,multi,type,availability);
-    console.log(property);
-    // Create a new UI instance
-    const ui = new UI();
 
-    // Input User Validation
-    if (name === "" || price === "" || year === "") {
-      ui.showMessage("Please Insert data in all fields", "danger");
+
     }
-
-    // Save Product
-    ui.addProduct(product);
-    ui.showMessage("Product Added Successfully", "success");
-    ui.resetForm();
+          // Create a new Oject Product
+          const property = new Property(name, ubication, tel,valueSelect,ant,services,multi,type,availability);
+          console.log(property);
+          console.log(multi);
   });
 
-document.getElementById("product-list").addEventListener("click", (e) => {
-  const ui = new UI();
-  ui.deleteProduct(e.target);
-  e.preventDefault();
-});

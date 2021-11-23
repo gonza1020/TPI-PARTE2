@@ -12,9 +12,6 @@ export class Property {
         this.multimedia= multimedia;
         this.tipo= tipo;
         this.disponibilidad= disponibilidad;
-        this.multimedia= ubicacion;
-
-
     }
 
 }
