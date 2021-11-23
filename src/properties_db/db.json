@@ -21,7 +21,8 @@
         "precio": "$150.000",
         "ambientes": 2,
         "disponibilidad": "disponible",
-        "tipo": "departamento"
+        "tipo": "departamento",
+        "propietario": "Matias Acosta"
     },
     {
         "id": 3,
@@ -33,7 +34,8 @@
         "precio": "$25.000",
         "ambientes": 2,
         "disponibilidad": "disponible",
-        "tipo": "casa"
+        "tipo": "casa",
+        "propietario": "Matias Acosta"
     }
     ], 
     "clientes": [

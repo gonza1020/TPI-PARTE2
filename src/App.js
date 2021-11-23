@@ -1,10 +1,11 @@
 import {Property}from "./Property.js";
 import { UI } from "./UI.js";
 
+//variables
 const d = document
-// DOM Events
-
 const $body = d.body;
+let propietario;
+
 
 d.addEventListener('keypress', async e=> { 
   if (e.key == "Enter" ) { 
@@ -21,12 +22,12 @@ d.addEventListener('keypress', async e=> {
       clientes.forEach(c => {
         console.log(typeof $input.value)
         if (parseInt($input.value) === c.DNI) { 
-          cliente = c
+          propietario = c
         }
 
       });
-      console.log(cliente)
-      if (cliente) { 
+      console.log(propietario)
+      if (propietario) { 
         
          /* $tabla.insertAdjacentHTML('afterend',
         `<div>
@@ -67,14 +68,14 @@ document.addEventListener('DOMContentLoaded', e=>{
       multi = d.getElementById("multi").value,
       type = d.getElementById("type").value,
       env = d.getElementById("env"),
-      valueSelect = env.options[env.selectedIndex].value;
+      valueSelect = env.options[env.selectedIndex].value,
+      prop = propietario
       let availability = 'Disponible';
-
       if(d.getElementById("exampleRadios2").checked == true){
           availability = 'No disponible';
       }
                 // Create a new Oject Product
-                const property = new Property(name, ubication, tel,valueSelect,ant,services,multi,type,availability);
+                const property = new Property(name, ubication, tel,valueSelect,ant,services,multi,type,availability,prop);
                 console.log(property);
                 console.log(multi);
 
