@@ -10,7 +10,7 @@ export class UI {
         if(xhr.status >=200 && xhr.status < 300) { 
             let reshtml = xhr.responseText
             success(reshtml)
-            console.log(xhr)
+            //console.log(xhr)
         }else { 
             let message = xhr.statusText || 'Eror'
             error (`Error: ${xhr.status}: ${message}`)

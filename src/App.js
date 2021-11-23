@@ -32,40 +32,47 @@ const addProperty = async (property = {}) => {
 d.addEventListener('click', e=> {
   if (e.target.matches('.cliente')) { 
     ui.getPage({url:'/form.html',success:(resp) => {$body.innerHTML = resp} })
+  }else if(e.target.matches('.search-icon')){
+    searchIcon();
   }
 })
+
+async function searchIcon(){
+  try {
+    const $tabla = d.querySelector('.table')
+    const $input = d.querySelector('form input')
+    let res = await fetch ('http://localhost:3000/clientes');
+    let clientes = await res.json();
+    if (!res.ok) throw {error}
+    clientes.forEach(c => {
+      if (parseInt($input.value) === c.DNI) { 
+        propietario = c
+      }
+
+    });
+    if (propietario) { 
+       /* $tabla.insertAdjacentHTML('afterend',
+      `<div>
+        <p><mark>Nombre: ${cliente.NombreApellido}</mark></p>
+        <p><mark>DNI: ${cliente.DNI}</mark></p>`)  */
+
+      $tabla.querySelector(".client-table").rows[0].cells[0].innerHTML = `<p>${propietario.NombreApellido}</p>`
+      $tabla.querySelector(".client-table").rows[0].cells[1].innerHTML = `<p>${propietario.DNI}</p>`
+      $tabla.querySelector(".client-table").rows[0].cells[2].innerHTML = `<button type="button" class="btn cliente btn-primary">Seleccionar</button>`
+    }
+  } catch (error) {
+    
+  }
+}
 d.addEventListener('keypress', async e=> { 
   if (e.key == "Enter" ) { 
     e.preventDefault();
-    try {
-      const $tabla = d.querySelector('.table')
-      const $input = d.querySelector('form input')
-      let res = await fetch ('http://localhost:3000/clientes');
-      let clientes = await res.json();
-      if (!res.ok) throw {error}
-      clientes.forEach(c => {
-        if (parseInt($input.value) === c.DNI) { 
-          propietario = c
-        }
-
-      });
-      if (propietario) { 
-         /* $tabla.insertAdjacentHTML('afterend',
-        `<div>
-          <p><mark>Nombre: ${cliente.NombreApellido}</mark></p>
-          <p><mark>DNI: ${cliente.DNI}</mark></p>`)  */
-
-        $tabla.querySelector(".client-table").rows[0].cells[0].innerHTML = `<p>${propietario.NombreApellido}</p>`
-        $tabla.querySelector(".client-table").rows[0].cells[1].innerHTML = `<p>${propietario.DNI}</p>`
-        $tabla.querySelector(".client-table").rows[0].cells[2].innerHTML = `<button type="button" class="btn cliente btn-primary">Seleccionar</button>`
-      }
-    } catch (error) {
-      
-    }
+    searchIcon();
   }
 
 })
-d.addEventListener('DOMContentLoaded', async e =>{
+
+async function getId(){
   try {
     let resProp = await fetch ('http://localhost:3000/propiedades');
     let propiedades = await resProp.json();
@@ -73,8 +80,7 @@ d.addEventListener('DOMContentLoaded', async e =>{
   } catch (error) {
     console.log(error)
   }
-})
-
+}
 document.addEventListener('DOMContentLoaded', e=>{
 
   ui.getPage({url:'/cliente.html',
@@ -86,7 +92,7 @@ document.addEventListener('DOMContentLoaded', e=>{
 
   d.addEventListener("submit", function (e) {
     if(e.target.matches('#propiedad-form')){
-          // Override the default Form behaviour
+      // Override the default Form behaviour
       e.preventDefault();
 
     // Getting Form Values
@@ -104,10 +110,10 @@ document.addEventListener('DOMContentLoaded', e=>{
       if(d.getElementById("exampleRadios2").checked == true){
           availability = 'No disponible';
       }
-                console.log(id);
+      getId();
                 idProp++;
                 // Create a new Oject Product
-                const property = new Property(id,name, ubication, tel,valueSelect,ant,services,multi,type,availability,prop);
+                const property = new Property(idProp,name, ubication, tel,valueSelect,ant,services,multi,type,availability,prop);
                 console.log(property);
                 console.log(multi);
                   $body.insertAdjacentHTML('beforeend',`

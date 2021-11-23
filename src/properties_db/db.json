@@ -58,6 +58,27 @@
         "Telefono": 3777523238,
         "Email": "gonzalozoloaga44@gmail.com"
       }
+    },
+    {
+      "id": 5,
+      "nombre": "Casa frente al rio ",
+      "ubicacion": "Padre Kloster 1023",
+      "telefono": "3777123456",
+      "cantAmbientes": "4",
+      "antiguedad": "12",
+      "servicios": "WIFI-PILETA-LUZ-PATIO",
+      "multimedia": "",
+      "tipo": "Alquiler",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 2,
+        "NombreApellido": "Gonzalo Zoloaga",
+        "DNI": 42792711,
+        "CUIL": 20427927114,
+        "FechaNacimiento": "21/09/00",
+        "Telefono": 3777523238,
+        "Email": "gonzalozoloaga44@gmail.com"
+      }
     }
   ],
   "clientes": [
