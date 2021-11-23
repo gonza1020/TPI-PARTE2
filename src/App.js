@@ -3,35 +3,56 @@ import { UI } from "./UI.js";
 
 //variables
 const d = document
-let propietario;
+let propietario,
+    idProp;
 const $body = document.body,
       ui = new UI();
 
-// DOM Events
-localStorage.setItem('post','NO')
 
-const addProperty = async (property = {}) => { 
+// DOM Events
+
+const addProperty = async (form,property = {}) => { 
   try {
+    var form = new FormData()
     const res = await fetch(`http://localhost:3000/propiedades`,
                 {   method:'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(property)
+                    body: form,
+                    redirect: 'follow'
                 });
-                const datos =  await res.json();
                 if(!res.ok) throw {status:res.status,message:res.statusText}   
-                localStorage.setItem('post','SI')
-                location.reload();
-              }   catch (error) {
+
+    } catch (error) {
       console.log(error.message)
+  }finally { 
+    ui.getPage({url:'/succes.html',success:(resp)=> $body.innerHTML = `${resp} <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Domus 2.0</h5>
+        </div>
+      <div class="modal-body">
+        PROPIEDAD CARGADA CON EXITO<br>
+        <div>
+        <p><b>Propiedad: ${property.nombre}</b></p> 
+        <p><b>Ubicacion: ${property.ubicacion}</b></p> 
+        <p><b>Telefono: ${property.telefono}</b></p> 
+        <p><b>Propietario: ${property.propietario.NombreApellido}</b></p>
+        <p><b>DNI: ${property.propietario.DNI}</b></p>
+</div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>`})
+
   } 
 }
 d.addEventListener('click', e=> {
   if (e.target.matches('.cliente')) { 
     ui.getPage({url:'/form.html',success:(resp) => {$body.innerHTML = resp} }
     )
-    localStorage.setItem('post','NO')
   }
 })
 d.addEventListener('keypress', async e=> { 
@@ -43,14 +64,12 @@ d.addEventListener('keypress', async e=> {
       let res = await fetch ('http://localhost:3000/clientes');
       let clientes = await res.json();
       if (!res.ok) throw {error}
-      console.log(clientes)
-      console.log($input.value)
       clientes.forEach(c => {
-        console.log(typeof $input.value)
         if (parseInt($input.value) === c.DNI) { 
           propietario = c
-        }});
-      console.log(propietario)
+        }
+
+      });
       if (propietario) { 
          /* $tabla.insertAdjacentHTML('afterend',
         `<div>
@@ -67,29 +86,30 @@ d.addEventListener('keypress', async e=> {
   }
 
 })
+d.addEventListener('DOMContentLoaded', async e =>{
+  try {
+    let resProp = await fetch ('http://localhost:3000/propiedades');
+    let propiedades = await resProp.json();
+    idProp = propiedades.length
+  } catch (error) {
+    console.log(error)
+  }
+})
 
-window.addEventListener('load', e=>{
-  if (window.localStorage.getItem('post') === 'NO') { 
+document.addEventListener('DOMContentLoaded', e=>{
     ui.getPage({url:'/cliente.html',
       success: (resp) => { 
         $body.innerHTML = resp;
       }  
     })
-  } else { 
-    ui.getPage({url:'/succes.html',
-    success: (resp) => { 
-      $body.innerHTML = resp;
-      }  
-    })
-  }
-  ;
+  
 })
 
   d.addEventListener("submit", function (e) {
+    e.preventDefault();
     if(e.target.matches('#propiedad-form')){
           // Override the default Form behaviour
-      e.preventDefault();
-      e.stopPropagation();
+
     // Getting Form Values
     const name = d.getElementById("name").value,
       ubication = d.getElementById("ubication").value,
@@ -105,31 +125,12 @@ window.addEventListener('load', e=>{
       if(d.getElementById("exampleRadios2").checked == true){
           availability = 'No disponible';
       }
+                idProp++;
                 // Create a new Oject Product
-                const property = new Property(name, ubication, tel,valueSelect,ant,services,multi,type,availability,prop);
+                const property = new Property(idProp,name, ubication, tel,valueSelect,ant,services,multi,type,availability,prop);
                 console.log(property);
                 console.log(multi);
-                  $body.insertAdjacentHTML('beforeend',`
-                  <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Domus 2.0</h5>
-                          </div>
-                          <div class="modal-body">
-                            PROPIEDAD CARGADA CON EXITO<br>
-                            <div>
-                            <p><b>Propiedad: ${property.nombre}</b></p> 
-                            <p><b>Ubicacion: ${property.ubicacion}</b></p> 
-                            <p><b>Telefono: ${property.telefono}</b></p> 
-                            <p><b>Propietario: ${property.propietario.NombreApellido}</b></p>
-                            <p><b>DNI: ${property.propietario.DNI}</b></p>
-                  </div>
-                          </div>
-                          <div class="modal-footer">
-                          </div>
-                        </div>
-                      </div>`)
-        addProperty(property)
+        addProperty(d.getElementById('propiedad-form'),property)
     }
     
   });

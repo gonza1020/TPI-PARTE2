@@ -37,6 +37,657 @@
       "disponibilidad": "disponible",
       "tipo": "casa",
       "propietario": "Matias Acosta"
+    },
+    {
+      "id": 4,
+      "nombre": "CAsa quinta ",
+      "ubicacion": "Bella Vista Corrientes",
+      "telefono": "3777123456",
+      "cantAmbientes": "1",
+      "antiguedad": "4",
+      "servicios": "wifi-pileta",
+      "multimedia": "",
+      "tipo": "ALquiler",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 2,
+        "NombreApellido": "Gonzalo Zoloaga",
+        "DNI": 42792711,
+        "CUIL": 20427927114,
+        "FechaNacimiento": "21/09/00",
+        "Telefono": 3777523238,
+        "Email": "gonzalozoloaga44@gmail.com"
+      }
+    },
+    {
+      "id": 5,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 6,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 7,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 8,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 9,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 10,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 11,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 12,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 13,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 14,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 15,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 16,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 17,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 18,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 19,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 20,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 21,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 22,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 23,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 24,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 25,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 26,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 27,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 28,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 29,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 30,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 31,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 32,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 33,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 34,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
     }
   ],
   "clientes": [
@@ -48,6 +699,24 @@
       "FechaNacimiento": "18/12/00",
       "Telefono": 3794267995,
       "Email": "sam@email.com"
+    },
+    {
+      "id": 2,
+      "NombreApellido": "Gonzalo Zoloaga",
+      "DNI": 42792711,
+      "CUIL": 20427927114,
+      "FechaNacimiento": "21/09/00",
+      "Telefono": 3777523238,
+      "Email": "gonzalozoloaga44@gmail.com"
+    },
+    {
+      "id": 3,
+      "NombreApellido": "Juan Cruz Carrizo",
+      "DNI": 43346436,
+      "CUIL": 20433464363,
+      "FechaNacimiento": "05/05/00",
+      "Telefono": 3777646767,
+      "Email": "juancarrizoast@gmail.com"
     }
   ]
 }
