@@ -1,0 +1,36 @@
+{
+    "propiedades": [ {
+        "id": 1,
+        "titulo": "Lorem, ipsum dolor",
+        "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid harum sed saepe ut voluptatum possimus maxime maiores, delectus odio exercitationem eligendi nisi cupiditate quo tempore quaerat dolore. Consectetur, iusto provident.",
+        "multimedia": "https://www.arrambide.com/wp-content/uploads/2020/01/20.jpg",
+        "servicios": [],
+        "antiguedad": 2,
+        "precio": "$250.000",
+        "disponibilidad": "disponible",
+        "tipo": "departamento"
+    }, 
+    {
+        "id": 2,
+        "titulo": "Lorem, ipsum dolor",
+        "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid harum sed saepe ut voluptatum possimus maxime maiores, delectus odio exercitationem eligendi nisi cupiditate quo tempore quaerat dolore. Consectetur, iusto provident.",
+        "multimedia": "https://www.arrambide.com/wp-content/uploads/2020/01/20.jpg",
+        "servicios": [],
+        "antiguedad": 3,
+        "precio": "$150.000",
+        "disponibilidad": "disponible",
+        "tipo": "departamento"
+    },
+    {
+        "id": 3,
+        "titulo": "Lorem, ipsum dolor",
+        "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid harum sed saepe ut voluptatum possimus maxime maiores, delectus odio exercitationem eligendi nisi cupiditate quo tempore quaerat dolore. Consectetur, iusto provident.",
+        "multimedia": "https://www.arrambide.com/wp-content/uploads/2020/01/20.jpg",
+        "servicios": [],
+        "antiguedad": 2,
+        "precio": "$25.000",
+        "disponibilidad": "disponible",
+        "tipo": "casa"
+    }
+    ] 
+}
