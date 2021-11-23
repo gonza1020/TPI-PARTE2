@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/FaztWeb/javascript-products-app-oop#readme",
   "dependencies": {
-    "live-server": "^1.2.1"
+    "live-server": "^1.1.0"
   }
 }
