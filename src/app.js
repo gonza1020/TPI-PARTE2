@@ -7,7 +7,7 @@ const $body = document.body;
 
 document.addEventListener('DOMContentLoaded', e=>{
   const ui = new UI(); 
-  ui.getPage({url:'/form.html',
+  ui.getPage({url:'/cliente.html',
       success: (resp) => { 
         $body.innerHTML = resp;
       }  
