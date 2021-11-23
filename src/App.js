@@ -39,7 +39,7 @@ d.addEventListener('keypress', async e=> {
 
 document.addEventListener('DOMContentLoaded', e=>{
   const ui = new UI(); 
-  ui.getPage({url:'./cliente.html',
+  ui.getPage({url:'./form.html',
       success: (resp) => { 
         $body.innerHTML = resp;
       }  
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', e=>{
       valueSelect = env.options[env.selectedIndex].value;
       let availability = 'Disponible';
 
-      if($form.getElementById("exampleRadios2").checked == true){
+      if(d.getElementById("exampleRadios2").checked == true){
           availability = 'No disponible';
       }
 
