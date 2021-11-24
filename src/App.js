@@ -147,7 +147,7 @@ const mostrarCliente = ($propietario,$tabla) => {
   ui.mostrarCliente($propietario,$tabla)
 }
 const mostrarCatalogo = () => { 
-  ui.getPage({url:'/catalog.html',success:(resp) => {
+  ui.getPage({url:'https://gonza1020.github.io/TPI-PARTE2/src/catalog.html',success:(resp) => {
     $body.innerHTML = resp
     const $template = d.getElementById('card-prop').content,
     $fragment = d.createDocumentFragment();
@@ -166,12 +166,12 @@ d.addEventListener('click', e=> {
     inm.buscarCliente();
   }else if(e.target.matches('.c1-cliente')){
     console.log("Prueba ")
-    llamarUI('/cliente.html')
+    llamarUI('https://gonza1020.github.io/TPI-PARTE2/src/cliente.html')
   }else if(e.target.matches('.catalog *')){
     mostrarCatalogo();  
   }else if(e.target.matches('.btn-search')){
     console.log('Buscador');
-    llamarUI('/propClient.html')
+    llamarUI('https://gonza1020.github.io/TPI-PARTE2/src/propClient.html')
 }else if(e.target.matches('.searchProp')){
     const $dni = d.querySelector('.search-client');
           const $template = d.getElementById('card-prop').content,
