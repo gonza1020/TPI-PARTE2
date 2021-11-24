@@ -11,7 +11,7 @@ const $body = document.body,
 
 // DOM Events
 
-const addProperty = async (form,property = {}) => { 
+const addProperty = async (property = {}) => { 
   try {
     const res = await fetch(`http://localhost:3000/propiedades`,
                 {   method:'POST',
@@ -129,7 +129,7 @@ d.addEventListener("submit", function (e) {
                 const property = new Property(idProp,name, ubication, tel,valueSelect,ant,services,multi,type,availability,prop);
                 console.log(property.getPropietario().NombreApellido);
                 console.log(idProp);
-      addProperty(d.getElementById('propiedad-form'),property)
+      addProperty(property);
     }
     
 });
