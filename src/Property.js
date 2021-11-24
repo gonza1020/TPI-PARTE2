@@ -16,5 +16,10 @@ export class Property {
         this.propietario = propietario;
     }
 
+    static getid () { 
+       this.cont += 1 
+        return this.cont
+    }
+
 }
 

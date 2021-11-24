@@ -8,26 +8,46 @@ let propietario,
 const $body = document.body,
       ui = new UI();
 
+
 // DOM Events
 
-
-
-const addProperty = async (property = {}) => { 
+const addProperty = async (form,property = {}) => { 
   try {
+    var form = new FormData()
     const res = await fetch(`http://localhost:3000/propiedades`,
                 {   method:'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(property)
+                    body: form,
+                    redirect: 'follow'
                 });
-                const datos =  await res.json();
-                if(!res.ok) throw {status:res.status,message:res.statusText}
-                //location.reload()
-    
-  } catch (error) {
+                if(!res.ok) throw {status:res.status,message:res.statusText}   
+
+    } catch (error) {
       console.log(error.message)
-  }
+  }finally { 
+    ui.getPage({url:'/succes.html',success:(resp)=> $body.innerHTML = `${resp} <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Domus 2.0</h5>
+        </div>
+      <div class="modal-body">
+        PROPIEDAD CARGADA CON EXITO<br>
+        <div>
+        <p><b>Propiedad: ${property.nombre}</b></p> 
+        <p><b>Ubicacion: ${property.ubicacion}</b></p> 
+        <p><b>Telefono: ${property.telefono}</b></p> 
+        <p><b>Propietario: ${property.propietario.NombreApellido}</b></p>
+        <p><b>DNI: ${property.propietario.DNI}</b></p>
+</div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>`})
+
+  } 
 }
 d.addEventListener('click', e=> {
   if (e.target.matches('.cliente')) { 
@@ -39,8 +59,8 @@ d.addEventListener('click', e=> {
 
 async function searchIcon(){
   try {
-    const $tabla = d.querySelector('.table')
-    const $input = d.querySelector('form input')
+    const $tabla = d.querySelector('.table');
+    const $input = d.querySelector('form input');
     let res = await fetch ('http://localhost:3000/clientes');
     let clientes = await res.json();
     if (!res.ok) throw {error}
@@ -82,18 +102,18 @@ async function getId(){
   }
 }
 document.addEventListener('DOMContentLoaded', e=>{
-
-  ui.getPage({url:'/cliente.html',
+    ui.getPage({url:'/cliente.html',
       success: (resp) => { 
         $body.innerHTML = resp;
       }  
-});
+    })
+  
 })
 
   d.addEventListener("submit", function (e) {
+    e.preventDefault();
     if(e.target.matches('#propiedad-form')){
-      // Override the default Form behaviour
-      e.preventDefault();
+          // Override the default Form behaviour
 
     // Getting Form Values
     const name = d.getElementById("name").value,
@@ -116,29 +136,7 @@ document.addEventListener('DOMContentLoaded', e=>{
                 const property = new Property(idProp,name, ubication, tel,valueSelect,ant,services,multi,type,availability,prop);
                 console.log(property);
                 console.log(multi);
-                  $body.insertAdjacentHTML('beforeend',`
-                  <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Domus 2.0</h5>
-                          </div>
-                          <div class="modal-body">
-                            PROPIEDAD CARGADA CON EXITO<br>
-                            <div>
-                            <p><b>Propiedad: ${property.nombre}</b></p> 
-                            <p><b>Ubicacion: ${property.ubicacion}</b></p> 
-                            <p><b>Telefono: ${property.telefono}</b></p> 
-                            <p><b>Propietario: ${property.propietario.NombreApellido}</b></p>
-                            <p><b>DNI: ${property.propietario.DNI}</b></p>
-                  </div>
-                          </div>
-                          <div class="modal-footer">
-                          </div>
-                        </div>
-                      </div>`)
-        addProperty(property)
-
-
+        addProperty(d.getElementById('propiedad-form'),property)
     }
     
   });
