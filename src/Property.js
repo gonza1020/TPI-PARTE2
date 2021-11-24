@@ -15,11 +15,5 @@ export class Property {
         this.disponibilidad= disponibilidad;
         this.propietario = propietario;
     }
-
-    static getid () { 
-       this.cont += 1 
-        return this.cont
-    }
-
 }
 

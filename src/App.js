@@ -13,14 +13,12 @@ const $body = document.body,
 
 const addProperty = async (form,property = {}) => { 
   try {
-    var form = new FormData()
     const res = await fetch(`http://localhost:3000/propiedades`,
                 {   method:'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: form,
-                    redirect: 'follow'
+                    body: JSON.stringify(property)
                 });
                 if(!res.ok) throw {status:res.status,message:res.statusText}   
 
@@ -54,6 +52,9 @@ d.addEventListener('click', e=> {
     ui.getPage({url:'/form.html',success:(resp) => {$body.innerHTML = resp} })
   }else if(e.target.matches('.search-icon')){
     searchIcon();
+  }else if(e.target.matches('.c1-cliente')){
+    console.log("Prueba ")
+    ui.getPage({url:'/cliente.html', success:(resp) => {$body.innerHTML = resp}})
   }
 })
 
@@ -102,7 +103,7 @@ async function getId(){
   }
 }
 document.addEventListener('DOMContentLoaded', e=>{
-    ui.getPage({url:'/cliente.html',
+    ui.getPage({url:'/menu.html',
       success: (resp) => { 
         $body.innerHTML = resp;
       }  
@@ -110,7 +111,7 @@ document.addEventListener('DOMContentLoaded', e=>{
   
 })
 
-  d.addEventListener("submit", function (e) {
+  d.addEventListener("submit", async function (e) {
     e.preventDefault();
     if(e.target.matches('#propiedad-form')){
           // Override the default Form behaviour
@@ -130,14 +131,13 @@ document.addEventListener('DOMContentLoaded', e=>{
       if(d.getElementById("exampleRadios2").checked == true){
           availability = 'No disponible';
       }
-      getId();
+      await getId();
                 idProp++;
                 // Create a new Oject Product
                 const property = new Property(idProp,name, ubication, tel,valueSelect,ant,services,multi,type,availability,prop);
                 console.log(property);
                 console.log(multi);
-        addProperty(d.getElementById('propiedad-form'),property)
+        await addProperty(d.getElementById('propiedad-form'),property)
     }
     
   });
-
