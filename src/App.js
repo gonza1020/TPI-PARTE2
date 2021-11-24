@@ -35,7 +35,7 @@ class Inmobiliaria {
                 'Content-Type': 'application/json'
             }
             });
-            let res = await instance.post(`https://gonza1020.github.io/db/propiedades.json`,property)  
+            let res = await instance.post(`http://localhost:3000/propiedades`,property)  
       } catch (error) {
         console.log(error.message)
     }finally { 
@@ -64,7 +64,7 @@ class Inmobiliaria {
   }
   async getProperties($fragment,$template,$dni){
     try {
-      let res = await fetch ('https://gonza1020.github.io/db/propiedades.json');
+      let res = await fetch ('http://localhost:3000/propiedades');
       let propiedades = await res.json();
       if (!res.ok) throw {error}
       if(!$dni){
@@ -115,7 +115,7 @@ class Inmobiliaria {
     try {
       propietario = null;
       const $tabla = d.querySelector('.table');
-      let res = await fetch ('https://gonza1020.github.io/db/clientes.json');
+      let res = await fetch ('http://localhost:3000/clientes');
       let clientes = await res.json();
       if (!res.ok) throw {error}
       clientes.forEach(c => {
@@ -147,7 +147,7 @@ const mostrarCliente = ($propietario,$tabla) => {
   ui.mostrarCliente($propietario,$tabla)
 }
 const mostrarCatalogo = () => { 
-  ui.getPage({url:'https://gonza1020.github.io/TPI-PARTE2/src/catalog.html',success:(resp) => {
+  ui.getPage({url:'/catalog.html',success:(resp) => {
     $body.innerHTML = resp
     const $template = d.getElementById('card-prop').content,
     $fragment = d.createDocumentFragment();
@@ -159,19 +159,19 @@ const mostrarCatalogo = () => {
 // DOM Events
 d.addEventListener('click', e=> {
   if (e.target.matches('.cliente')) { 
-    llamarUI('https://gonza1020.github.io/TPI-PARTE2/src/form.html')
+    llamarUI('/form.html')
     console.log(propietario)
 
   }else if(e.target.matches('.client-search')){
     inm.buscarCliente();
   }else if(e.target.matches('.c1-cliente')){
     console.log("Prueba ")
-    llamarUI('https://gonza1020.github.io/TPI-PARTE2/src/cliente.html')
+    llamarUI('/cliente.html')
   }else if(e.target.matches('.catalog *')){
     mostrarCatalogo();  
   }else if(e.target.matches('.btn-search')){
     console.log('Buscador');
-    llamarUI('https://gonza1020.github.io/TPI-PARTE2/src/propClient.html')
+    llamarUI('/propClient.html')
 }else if(e.target.matches('.searchProp')){
     const $dni = d.querySelector('.search-client');
           const $template = d.getElementById('card-prop').content,
@@ -191,7 +191,7 @@ d.addEventListener('keyup', async e=> {
 
 d.addEventListener('DOMContentLoaded', e=>{
     inm.getProperties()
-    llamarUI('https://gonza1020.github.io/TPI-PARTE2/src/menu.html')
+    llamarUI('/menu.html')
 })
 
 d.addEventListener("submit", e => { 
