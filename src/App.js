@@ -83,6 +83,10 @@ class Inmobiliaria {
       if(cont === 0 ){ 
         $body.removeChild(d.querySelector('.borrar'));
       } else  {
+        let prueba = d.querySelector('.borrar');
+        if (prueba) {
+          $body.removeChild(prueba);
+        }
         let $div = d.createElement('div');
         $div.classList.add('borrar')
         $body.appendChild($div)
@@ -158,7 +162,7 @@ d.addEventListener('click', e=> {
     const $dni = d.querySelector('.search-client');
           const $template = d.getElementById('card-prop').content,
           $fragment = d.createDocumentFragment();
-          console.log($dni.value);
+          if(!$dni.value) $dni.value = 'Ingrese nuevamente'
           inm.getProperties($fragment,$template,$dni.value)
   }else if (e.target.matches('.back-btn')) {
     if (ui.getUrl() == '/catalog.html' || ui.getUrl() == '/propClient.html' || ui.getUrl() == '/cliente.html') {
