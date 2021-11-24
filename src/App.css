@@ -18,4 +18,17 @@ body{
     background: red;
 }
 
+.container-catalog .back-btn{
+    margin-left:25px;
+    margin-top: 20px;
+}
 
+.cont-form .back-btn{
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+#App{
+    margin-top: 20px;
+    padding: 0 !important;
+}
