@@ -13,8 +13,8 @@ export class UI {
             success(reshtml)
             console.log(xhr)
         }else { 
-            let message = xhr.statusText || 'Eror'
-            error (`Error: ${xhr.status}: ${message}`)
+            let message = xhr.statusText || 'Error'
+            //error (`Error: ${xhr.status}: ${message}`)
         }
     })
     xhr.open('GET',url); 
