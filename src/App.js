@@ -190,7 +190,7 @@ d.addEventListener('keyup', async e=> {
 })
 
 d.addEventListener('DOMContentLoaded', e=>{
-    inm.getProperties()
+    //inm.getProperties()
     llamarUI('https://gonza1020.github.io/TPI-PARTE2/src/menu.html')
 })
 
