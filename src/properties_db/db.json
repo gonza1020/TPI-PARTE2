@@ -39,15 +39,14 @@
       "propietario": "Matias Acosta"
     },
     {
-      "id": 4,
-      "nombre": "CAsa quinta ",
-      "ubicacion": "Bella Vista Corrientes",
-      "telefono": "3777123456",
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
       "cantAmbientes": "1",
-      "antiguedad": "4",
-      "servicios": "wifi-pileta",
+      "antiguedad": "",
+      "servicios": "",
       "multimedia": "",
-      "tipo": "ALquiler",
+      "tipo": "",
       "disponibilidad": "Disponible",
       "propietario": {
         "id": 2,
@@ -57,7 +56,8 @@
         "FechaNacimiento": "21/09/00",
         "Telefono": 3777523238,
         "Email": "gonzalozoloaga44@gmail.com"
-      }
+      },
+      "id": 4
     },
     {
       "id": 5,
@@ -71,13 +71,13 @@
       "tipo": "",
       "disponibilidad": "Disponible",
       "propietario": {
-        "id": 1,
-        "NombreApellido": "Matias Acosta",
-        "DNI": 43109981,
-        "CUIL": 20431099811,
-        "FechaNacimiento": "18/12/00",
-        "Telefono": 3794267995,
-        "Email": "sam@email.com"
+        "id": 2,
+        "NombreApellido": "Gonzalo Zoloaga",
+        "DNI": 42792711,
+        "CUIL": 20427927114,
+        "FechaNacimiento": "21/09/00",
+        "Telefono": 3777523238,
+        "Email": "gonzalozoloaga44@gmail.com"
       }
     },
     {
@@ -92,13 +92,13 @@
       "tipo": "",
       "disponibilidad": "Disponible",
       "propietario": {
-        "id": 1,
-        "NombreApellido": "Matias Acosta",
-        "DNI": 43109981,
-        "CUIL": 20431099811,
-        "FechaNacimiento": "18/12/00",
-        "Telefono": 3794267995,
-        "Email": "sam@email.com"
+        "id": 2,
+        "NombreApellido": "Gonzalo Zoloaga",
+        "DNI": 42792711,
+        "CUIL": 20427927114,
+        "FechaNacimiento": "21/09/00",
+        "Telefono": 3777523238,
+        "Email": "gonzalozoloaga44@gmail.com"
       }
     },
     {

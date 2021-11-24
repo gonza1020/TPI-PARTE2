@@ -18,7 +18,8 @@ const addProperty = async (form,property = {}) => {
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(property)
+                    body: JSON.stringify(property),
+                    redirect: 'follow'
                 });
                 if(!res.ok) throw {status:res.status,message:res.statusText}   
 
@@ -33,7 +34,7 @@ const addProperty = async (form,property = {}) => {
       <div class="modal-body">
         PROPIEDAD CARGADA CON EXITO<br>
         <div>
-        <p><b>Propiedad: ${property.nombre}</b></p> 
+        <p><b>Propiedad: ${property.getNombre()}</b></p> 
         <p><b>Ubicacion: ${property.ubicacion}</b></p> 
         <p><b>Telefono: ${property.telefono}</b></p> 
         <p><b>Propietario: ${property.propietario.NombreApellido}</b></p>
@@ -90,18 +91,12 @@ d.addEventListener('keypress', async e=> {
     e.preventDefault();
     searchIcon();
   }
-
 })
 
-async function getId(){
-  try {
-    let resProp = await fetch ('http://localhost:3000/propiedades');
-    let propiedades = await resProp.json();
-    idProp = propiedades.length
-  } catch (error) {
-    console.log(error)
-  }
-}
+
+
+
+
 document.addEventListener('DOMContentLoaded', e=>{
     ui.getPage({url:'/menu.html',
       success: (resp) => { 
@@ -111,7 +106,7 @@ document.addEventListener('DOMContentLoaded', e=>{
   
 })
 
-  d.addEventListener("submit", async function (e) {
+d.addEventListener("submit", function (e) {
     e.preventDefault();
     if(e.target.matches('#propiedad-form')){
           // Override the default Form behaviour
@@ -131,13 +126,12 @@ document.addEventListener('DOMContentLoaded', e=>{
       if(d.getElementById("exampleRadios2").checked == true){
           availability = 'No disponible';
       }
-      await getId();
                 idProp++;
-                // Create a new Oject Product
                 const property = new Property(idProp,name, ubication, tel,valueSelect,ant,services,multi,type,availability,prop);
-                console.log(property);
-                console.log(multi);
-        await addProperty(d.getElementById('propiedad-form'),property)
+                console.log(property.getPropietario().NombreApellido);
+                console.log(idProp);
+      addProperty(d.getElementById('propiedad-form'),property)
     }
     
-  });
+});
+
