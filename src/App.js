@@ -155,7 +155,6 @@ const mostrarCatalogo = () => {
   } });
 }
 
-
 // DOM Events
 d.addEventListener('click', e=> {
   if (e.target.matches('.cliente')) { 
@@ -178,6 +177,13 @@ d.addEventListener('click', e=> {
           $fragment = d.createDocumentFragment();
           console.log($dni.value);
           inm.getProperties($fragment,$template,$dni.value)
+  }else if (e.target.matches('.back-btn')) {
+    if (ui.getUrl() == '/catalog.html' || ui.getUrl() == '/propClient.html' || ui.getUrl() == '/cliente.html') {
+      llamarUI('/menu.html')
+    };
+    if (ui.getUrl() == '/form.html' ){
+      llamarUI('/cliente.html')
+    }
   }
 })
 d.addEventListener('keyup', async e=> {  
