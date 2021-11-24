@@ -44,23 +44,32 @@
                                 <option>5</option>
                               </select>
                         </div>
+                        <div class="form-group col-md-2">
+                            <label>Antiguedad</label>
+                            <input type="number" placeholder="Años"
+                                class="form-control" id="ant">
+                        </div>
                     </div>
-                    
-                    <div class="form-group">
-                        <input type="number" placeholder="Antiguedad"
-                            class="form-control" id="ant">
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label>Servicios</label>
+                            <input type="text" id="services"
+                                class="form-control">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Tipo</label>
+                            <input type="text" id="type" placeholder="Tipo"
+                                class="form-control">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="text" id="services" placeholder="Servicios"
-                            class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>Multimedia</label>
-                        <input type="file" class="form-control-file" id="multi">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="type" placeholder="Tipo"
-                            class="form-control">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Multimedia</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="multi" lang="es">
+                                <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Disponibilidad</label>
@@ -77,11 +86,9 @@
                             </label>
                         </div>
                     </div>
-                    <input type="submit" value="Save" class="btn btn-primary btn-block">
+                    <input type="submit" value="Guardar" class="btn btn-primary btn-block btn-form">
                 </form>
             </div>
         </div>
-        <!-- PRODUCTS LIST -->
-        <!-- <div id="product-list" class="col-md-8"></div> -->
     </div>
 </div>
