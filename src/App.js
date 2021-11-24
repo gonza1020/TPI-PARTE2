@@ -2,30 +2,20 @@ import {Property}from "./Property.js";
 import { UI } from "./UI.js";
 
 class Inmobiliaria {
-  newProperty (e,d) {
-    e.preventDefault();
-    const form = d.getElementById('propiedad-form')
-    if(e.target === form){
+  newProperty (propiedad) {
+    let {name,ubic,tel,ant,serv,multi,type,valueSelect,radio} = propiedad
+    
     // Override the default Form behaviour
     // Getting Form Values
-    const name = d.getElementById("name").value,
-      ubication = d.getElementById("ubication").value,
-      tel = d.getElementById("tel").value,
-      ant = d.getElementById("ant").value,
-      services = d.getElementById("services").value,
-      multi = d.getElementById("multi").value,
-      type = d.getElementById("type").value,
-      env = d.getElementById("env"),
-      valueSelect = env.options[env.selectedIndex].value,
-      prop = propietario
+      let prop = propietario
       let availability = 'Disponible';
-      if(d.getElementById("exampleRadios2").checked == true){
+      if(radio == true){
           availability = 'No disponible';
       }
       idProp++;
-      const property = new Property(idProp,name, ubication, tel,valueSelect,ant,services,multi,type,availability,prop);
+      const property = new Property(idProp,name, ubic, tel,valueSelect,ant,serv,multi,type,availability,prop);
       inm.addProperty(property);
-    }
+    
     
   }
    addProperty = async (property = {}) => { 
@@ -68,15 +58,9 @@ class Inmobiliaria {
       let propiedades = await res.json();
       if (!res.ok) throw {error}
       if(!$dni){
-        propiedades.forEach(c => {
-          $template.querySelector('#tit-prop').textContent = c.nombre;
-          $template.querySelector('#serv-prop').textContent = `Servicios: ${c.servicios}`;
-          $template.querySelector('#disp-prop').innerHTML = `<strong>${c.disponibilidad}</strong>`;
-          $template.querySelector('#dir-prop').textContent = `Ubicacion: ${c.ubicacion}`;
-          $template.querySelector('#img-prop').setAttribute("src","https://placeimg.com/640/480/arch");
-          let $clone = d.importNode($template,true);
-          $fragment.appendChild($clone)
-      });
+
+        ui.getPropiedades(propiedades,$template,$fragment)
+
       }else{
         let cont = 0;
        
@@ -201,8 +185,22 @@ d.addEventListener('DOMContentLoaded', e=>{
 })
 
 d.addEventListener("submit", e => { 
-  inm.newProperty(e,d) 
-  console.log(propietario)
-
+  e.preventDefault()
+  const form = d.getElementById('propiedad-form')
+  if(e.target === form){
+  let env = d.getElementById("env");
+  let property = {
+    name : d.getElementById("name").value,
+    ubication : d.getElementById("ubication").value,
+    tel : d.getElementById("tel").value,
+    ant : d.getElementById("ant").value,
+    services : d.getElementById("services").value,
+    multi : d.getElementById("multi").value,
+    type : d.getElementById("type").value,
+    valueSelect : env.options[env.selectedIndex].value,
+    radio: d.getElementById("exampleRadios2").checked
+  }
+  inm.newProperty(property) 
+  }
 });
 

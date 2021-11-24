@@ -1,4 +1,5 @@
 // UI Constructor
+const d = document;
 export class UI {
   
    getPage = (options) => { 
@@ -22,7 +23,17 @@ export class UI {
     xhr.send();
     
     }
-
+    getPropiedades = (propiedades,$template,$fragment,$dni) => {
+        propiedades.forEach(c => {
+          $template.querySelector('#tit-prop').textContent = c.nombre;
+          $template.querySelector('#serv-prop').textContent = `Servicios: ${c.servicios}`;
+          $template.querySelector('#disp-prop').innerHTML = `<strong>${c.disponibilidad}</strong>`;
+          $template.querySelector('#dir-prop').textContent = `Ubicacion: ${c.ubicacion}`;
+          $template.querySelector('#img-prop').setAttribute("src","https://placeimg.com/640/480/arch");
+          let $clone = d.importNode($template,true);
+          $fragment.appendChild($clone)
+        });
+    };
   getUrl = () =>{
     return this.url
   }

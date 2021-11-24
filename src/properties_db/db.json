@@ -191,11 +191,7 @@
     },
     {
       "id": 10,
-<<<<<<< HEAD
-      "nombre": "Matias Emanuel Acosta",
-=======
       "nombre": "Casa rosada",
->>>>>>> fc98ea4e8743aa0b1bd7276527ca02b9cd17b242
       "ubicacion": "",
       "telefono": "",
       "cantAmbientes": "1",
@@ -205,15 +201,6 @@
       "tipo": "",
       "disponibilidad": "Disponible",
       "propietario": {
-<<<<<<< HEAD
-        "id": 2,
-        "NombreApellido": "Gonzalo Zoloaga",
-        "DNI": 42792711,
-        "CUIL": 20427927114,
-        "FechaNacimiento": "21/09/00",
-        "Telefono": 3777523238,
-        "Email": "gonzalozoloaga44@gmail.com"
-=======
         "id": 1,
         "NombreApellido": "Matias Acosta",
         "DNI": 43109981,
@@ -221,7 +208,6 @@
         "FechaNacimiento": "18/12/00",
         "Telefono": 3794267995,
         "Email": "sam@email.com"
->>>>>>> fc98ea4e8743aa0b1bd7276527ca02b9cd17b242
       }
     },
     {
@@ -232,6 +218,101 @@
       "cantAmbientes": "1",
       "antiguedad": "",
       "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 12,
+      "nombre": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 2,
+        "NombreApellido": "Gonzalo Zoloaga",
+        "DNI": 42792711,
+        "CUIL": 20427927114,
+        "FechaNacimiento": "21/09/00",
+        "Telefono": 3777523238,
+        "Email": "gonzalozoloaga44@gmail.com"
+      }
+    },
+    {
+      "id": 13,
+      "nombre": "gonz anduvo nae gilll",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 2,
+        "NombreApellido": "Gonzalo Zoloaga",
+        "DNI": 42792711,
+        "CUIL": 20427927114,
+        "FechaNacimiento": "21/09/00",
+        "Telefono": 3777523238,
+        "Email": "gonzalozoloaga44@gmail.com"
+      }
+    },
+    {
+      "id": 14,
+      "nombre": "mira pue si me voy a cagar ",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 2,
+        "NombreApellido": "Gonzalo Zoloaga",
+        "DNI": 42792711,
+        "CUIL": 20427927114,
+        "FechaNacimiento": "21/09/00",
+        "Telefono": 3777523238,
+        "Email": "gonzalozoloaga44@gmail.com"
+      }
+    },
+    {
+      "id": 15,
+      "nombre": "si o ",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 2,
+        "NombreApellido": "Gonzalo Zoloaga",
+        "DNI": 42792711,
+        "CUIL": 20427927114,
+        "FechaNacimiento": "21/09/00",
+        "Telefono": 3777523238,
+        "Email": "gonzalozoloaga44@gmail.com"
+      }
+    },
+    {
+      "id": 16,
+      "nombre": "anda o no anda",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
       "multimedia": "",
       "tipo": "",
       "disponibilidad": "Disponible",
