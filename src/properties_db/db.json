@@ -3,13 +3,13 @@
     {
       "id": 1,
       "nombre": "casa quinta",
-      "ubicacion": "Bella Vista Corrientes",
-      "telefono": "3777123456",
-      "cantAmbientes": "3",
-      "antiguedad": "3",
-      "servicios": "WIFI-PILETA",
-      "multimedia": "",
-      "tipo": "ALQUILER",
+      "ubicacion": "Corrientes",
+      "telefono": "4442231",
+      "cantAmbientes": "1",
+      "antiguedad": "1",
+      "servicios": "WIFI-AGUA",
+      "multimedia": "C:\\fakepath\\Captura de pantalla de 2021-11-24 16-40-15.png",
+      "tipo": "Alquiler",
       "disponibilidad": "Disponible",
       "propietario": {
         "id": 2,
@@ -23,13 +23,97 @@
     },
     {
       "id": 2,
-      "nombre": "Casa sobre la playa",
-      "ubicacion": "Corrientes",
-      "telefono": "12454680",
-      "cantAmbientes": "1",
+      "nombre": "Chalet",
+      "ubicacion": "Paso de la patria, ctes",
+      "telefono": "12345678",
+      "cantAmbientes": "4",
       "antiguedad": "2",
-      "servicios": "WIFI-PILETA",
-      "multimedia": "/home/gonzalo/Escritorio/GIT/TPI-PARTE2/assets/casa2.jpeg",
+      "servicios": "WIFI-AGUA",
+      "multimedia": "",
+      "tipo": "Alquiler",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 3,
+      "nombre": "Casa sobre la playa",
+      "ubicacion": "Ingleses, Brasil",
+      "telefono": "12345678",
+      "cantAmbientes": "4",
+      "antiguedad": "6",
+      "servicios": "PLAYA PRIVADA-WIFI-AGUA",
+      "multimedia": "",
+      "tipo": "ALQUILER",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 3,
+        "NombreApellido": "Juan Cruz Carrizo",
+        "DNI": 43346436,
+        "CUIL": 20433464363,
+        "FechaNacimiento": "05/05/00",
+        "Telefono": 3777646767,
+        "Email": "juancarrizoast@gmail.com"
+      }
+    },
+    {
+      "id": 4,
+      "nombre": "Depto Piso 10",
+      "ubicacion": "Yrigoyen 55",
+      "telefono": "1",
+      "cantAmbientes": "2",
+      "antiguedad": "4",
+      "servicios": "WIFI-COCHERA-LUZ-AGUA",
+      "multimedia": "",
+      "tipo": "ALQUILER",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 4,
+        "NombreApellido": "Marcelo Gustavo Casco",
+        "DNI": 35103426,
+        "CUIL": 20351034263,
+        "FechaNacimiento": "09/02/90",
+        "Telefono": 3777646767,
+        "Email": "marcecasco@gmail.com"
+      }
+    },
+    {
+      "id": 5,
+      "nombre": "Casa dos pisos",
+      "ubicacion": "La leonesa, Chaco",
+      "telefono": "12345678",
+      "cantAmbientes": "5",
+      "antiguedad": "2",
+      "servicios": "WIFI-AGUA",
+      "multimedia": "",
+      "tipo": "Venta",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 5,
+        "NombreApellido": "Franco Corro",
+        "DNI": 36634885,
+        "CUIL": 23366348859,
+        "FechaNacimiento": "02/01/93",
+        "Telefono": 3777646767,
+        "Email": "francocorro@gmail.com"
+      }
+    },
+    {
+      "id": 6,
+      "nombre": "Depto piso 3",
+      "ubicacion": "Resistencia, Chaco",
+      "telefono": "12345678",
+      "cantAmbientes": "5",
+      "antiguedad": "6",
+      "servicios": "WIFI-PILETA EN LA TERRAZA",
+      "multimedia": "",
       "tipo": "ALQUILER",
       "disponibilidad": "Disponible",
       "propietario": {
@@ -40,347 +124,6 @@
         "FechaNacimiento": "21/09/00",
         "Telefono": 3777523238,
         "Email": "gonzalozoloaga44@gmail.com"
-      }
-    },
-    {
-      "id": 3,
-      "nombre": "Chalet",
-      "ubicacion": "Paso",
-      "telefono": "12345678",
-      "cantAmbientes": "1",
-      "antiguedad": "4",
-      "servicios": "WIFI",
-      "multimedia": "",
-      "tipo": "alquiler",
-      "disponibilidad": "Disponible",
-      "propietario": {
-        "id": 2,
-        "NombreApellido": "Gonzalo Zoloaga",
-        "DNI": 42792711,
-        "CUIL": 20427927114,
-        "FechaNacimiento": "21/09/00",
-        "Telefono": 3777523238,
-        "Email": "gonzalozoloaga44@gmail.com"
-      }
-    },
-    {
-      "id": 4,
-      "nombre": "Casa Blanca",
-      "ubicacion": "Bella Vista",
-      "telefono": "03777646767",
-      "cantAmbientes": "3",
-      "antiguedad": "10",
-      "servicios": "Agua",
-      "multimedia": "",
-      "tipo": "Depto",
-      "disponibilidad": "Disponible",
-      "propietario": {
-        "id": 1,
-        "NombreApellido": "Matias Acosta",
-        "DNI": 43109981,
-        "CUIL": 20431099811,
-        "FechaNacimiento": "18/12/00",
-        "Telefono": 3794267995,
-        "Email": "sam@email.com"
-      }
-    },
-    {
-      "id": 5,
-      "nombre": "gr",
-      "ubicacion": "gg",
-      "telefono": "2",
-      "cantAmbientes": "1",
-      "antiguedad": "2",
-      "servicios": "Agua Luz",
-      "multimedia": "C:\\fakepath\\Carrizo - ratio 16-1 - radio 1-1.jpg",
-      "tipo": "Depto",
-      "disponibilidad": "Disponible",
-      "propietario": {
-        "id": 1,
-        "NombreApellido": "Matias Acosta",
-        "DNI": 43109981,
-        "CUIL": 20431099811,
-        "FechaNacimiento": "18/12/00",
-        "Telefono": 3794267995,
-        "Email": "sam@email.com"
-      }
-    },
-    {
-      "id": 6,
-      "nombre": "",
-      "ubicacion": "",
-      "telefono": "",
-      "cantAmbientes": "1",
-      "antiguedad": "",
-      "servicios": "",
-      "multimedia": "",
-      "tipo": "",
-      "disponibilidad": "Disponible",
-      "propietario": {
-        "id": 1,
-        "NombreApellido": "Matias Acosta",
-        "DNI": 43109981,
-        "CUIL": 20431099811,
-        "FechaNacimiento": "18/12/00",
-        "Telefono": 3794267995,
-        "Email": "sam@email.com"
-      }
-    },
-    {
-      "id": 7,
-      "nombre": "Juan Cruz Carrizo",
-      "ubicacion": "",
-      "telefono": "03777646767",
-      "cantAmbientes": "1",
-      "antiguedad": "",
-      "servicios": "",
-      "multimedia": "",
-      "tipo": "",
-      "disponibilidad": "Disponible",
-      "propietario": {
-        "id": 1,
-        "NombreApellido": "Matias Acosta",
-        "DNI": 43109981,
-        "CUIL": 20431099811,
-        "FechaNacimiento": "18/12/00",
-        "Telefono": 3794267995,
-        "Email": "sam@email.com"
-      }
-    },
-    {
-      "id": 8,
-      "nombre": "Juan Cruz Carrizo",
-      "ubicacion": "",
-      "telefono": "03777646767",
-      "cantAmbientes": "1",
-      "antiguedad": "",
-      "servicios": "",
-      "multimedia": "",
-      "tipo": "",
-      "disponibilidad": "Disponible",
-      "propietario": {
-        "id": 1,
-        "NombreApellido": "Matias Acosta",
-        "DNI": 43109981,
-        "CUIL": 20431099811,
-        "FechaNacimiento": "18/12/00",
-        "Telefono": 3794267995,
-        "Email": "sam@email.com"
-      }
-    },
-    {
-      "id": 9,
-      "nombre": "hijo",
-      "ubicacion": "",
-      "telefono": "",
-      "cantAmbientes": "1",
-      "antiguedad": "",
-      "servicios": "",
-      "multimedia": "",
-      "tipo": "",
-      "disponibilidad": "Disponible",
-      "propietario": {
-        "id": 1,
-        "NombreApellido": "Matias Acosta",
-        "DNI": 43109981,
-        "CUIL": 20431099811,
-        "FechaNacimiento": "18/12/00",
-        "Telefono": 3794267995,
-        "Email": "sam@email.com"
-      }
-    },
-    {
-      "id": 10,
-<<<<<<< HEAD
-      "nombre": "Casa rosada",
-=======
-      "nombre": "Matias Emanuel Acosta",
->>>>>>> f29af098185e91a5476c0fc60d4bfb6e3cd6437c
-      "ubicacion": "",
-      "telefono": "",
-      "cantAmbientes": "1",
-      "antiguedad": "",
-      "servicios": "",
-      "multimedia": "",
-      "tipo": "",
-      "disponibilidad": "Disponible",
-      "propietario": {
-<<<<<<< HEAD
-        "id": 1,
-        "NombreApellido": "Matias Acosta",
-        "DNI": 43109981,
-        "CUIL": 20431099811,
-        "FechaNacimiento": "18/12/00",
-        "Telefono": 3794267995,
-        "Email": "sam@email.com"
-      }
-    },
-    {
-      "id": 11,
-      "nombre": "",
-      "ubicacion": "",
-      "telefono": "",
-      "cantAmbientes": "1",
-      "antiguedad": "",
-      "servicios": "",
-      "multimedia": "",
-      "tipo": "",
-      "disponibilidad": "Disponible",
-      "propietario": {
-        "id": 1,
-        "NombreApellido": "Matias Acosta",
-        "DNI": 43109981,
-        "CUIL": 20431099811,
-        "FechaNacimiento": "18/12/00",
-        "Telefono": 3794267995,
-        "Email": "sam@email.com"
-      }
-    },
-    {
-      "id": 12,
-      "nombre": "",
-      "telefono": "",
-      "cantAmbientes": "1",
-      "antiguedad": "",
-      "multimedia": "",
-      "tipo": "",
-      "disponibilidad": "Disponible",
-      "propietario": {
-=======
->>>>>>> f29af098185e91a5476c0fc60d4bfb6e3cd6437c
-        "id": 2,
-        "NombreApellido": "Gonzalo Zoloaga",
-        "DNI": 42792711,
-        "CUIL": 20427927114,
-        "FechaNacimiento": "21/09/00",
-        "Telefono": 3777523238,
-        "Email": "gonzalozoloaga44@gmail.com"
-      }
-    },
-    {
-<<<<<<< HEAD
-      "id": 13,
-      "nombre": "gonz anduvo nae gilll",
-      "telefono": "",
-      "cantAmbientes": "1",
-      "antiguedad": "",
-      "multimedia": "",
-      "tipo": "",
-      "disponibilidad": "Disponible",
-      "propietario": {
-        "id": 2,
-        "NombreApellido": "Gonzalo Zoloaga",
-        "DNI": 42792711,
-        "CUIL": 20427927114,
-        "FechaNacimiento": "21/09/00",
-        "Telefono": 3777523238,
-        "Email": "gonzalozoloaga44@gmail.com"
-      }
-    },
-    {
-      "id": 14,
-      "nombre": "mira pue si me voy a cagar ",
-      "telefono": "",
-      "cantAmbientes": "1",
-      "antiguedad": "",
-=======
-      "id": 11,
-      "nombre": "",
-      "ubicacion": "",
-      "telefono": "",
-      "cantAmbientes": "1",
-      "antiguedad": "",
-      "servicios": "",
->>>>>>> f29af098185e91a5476c0fc60d4bfb6e3cd6437c
-      "multimedia": "",
-      "tipo": "",
-      "disponibilidad": "Disponible",
-      "propietario": {
-<<<<<<< HEAD
-        "id": 2,
-        "NombreApellido": "Gonzalo Zoloaga",
-        "DNI": 42792711,
-        "CUIL": 20427927114,
-        "FechaNacimiento": "21/09/00",
-        "Telefono": 3777523238,
-        "Email": "gonzalozoloaga44@gmail.com"
-      }
-    },
-    {
-      "id": 15,
-      "nombre": "si o ",
-      "telefono": "",
-      "cantAmbientes": "1",
-      "antiguedad": "",
-=======
-        "id": 1,
-        "NombreApellido": "Matias Acosta",
-        "DNI": 43109981,
-        "CUIL": 20431099811,
-        "FechaNacimiento": "18/12/00",
-        "Telefono": 3794267995,
-        "Email": "sam@email.com"
-      }
-    },
-    {
-      "id": 12,
-      "nombre": "",
-      "ubicacion": "",
-      "telefono": "",
-      "cantAmbientes": "1",
-      "antiguedad": "",
-      "servicios": "",
->>>>>>> f29af098185e91a5476c0fc60d4bfb6e3cd6437c
-      "multimedia": "",
-      "tipo": "",
-      "disponibilidad": "Disponible",
-      "propietario": {
-<<<<<<< HEAD
-        "id": 2,
-        "NombreApellido": "Gonzalo Zoloaga",
-        "DNI": 42792711,
-        "CUIL": 20427927114,
-        "FechaNacimiento": "21/09/00",
-        "Telefono": 3777523238,
-        "Email": "gonzalozoloaga44@gmail.com"
-      }
-    },
-    {
-      "id": 16,
-      "nombre": "anda o no anda",
-      "telefono": "",
-      "cantAmbientes": "1",
-      "antiguedad": "",
-=======
-        "id": 1,
-        "NombreApellido": "Matias Acosta",
-        "DNI": 43109981,
-        "CUIL": 20431099811,
-        "FechaNacimiento": "18/12/00",
-        "Telefono": 3794267995,
-        "Email": "sam@email.com"
-      }
-    },
-    {
-      "id": 13,
-      "nombre": "wep",
-      "ubicacion": "",
-      "telefono": "",
-      "cantAmbientes": "1",
-      "antiguedad": "",
-      "servicios": "",
->>>>>>> f29af098185e91a5476c0fc60d4bfb6e3cd6437c
-      "multimedia": "",
-      "tipo": "",
-      "disponibilidad": "Disponible",
-      "propietario": {
-        "id": 1,
-        "NombreApellido": "Matias Acosta",
-        "DNI": 43109981,
-        "CUIL": 20431099811,
-        "FechaNacimiento": "18/12/00",
-        "Telefono": 3794267995,
-        "Email": "sam@email.com"
       }
     }
   ],
@@ -411,6 +154,24 @@
       "FechaNacimiento": "05/05/00",
       "Telefono": 3777646767,
       "Email": "juancarrizoast@gmail.com"
+    },
+    {
+      "id": 4,
+      "NombreApellido": "Marcelo Gustavo Casco",
+      "DNI": 35103426,
+      "CUIL": 20351034263,
+      "FechaNacimiento": "09/02/90",
+      "Telefono": 3777646767,
+      "Email": "marcecasco@gmail.com"
+    },
+    {
+      "id": 5,
+      "NombreApellido": "Franco Corro",
+      "DNI": 36634885,
+      "CUIL": 23366348859,
+      "FechaNacimiento": "02/01/93",
+      "Telefono": 3777646767,
+      "Email": "francocorro@gmail.com"
     }
   ]
 }

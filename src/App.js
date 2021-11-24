@@ -190,10 +190,10 @@ d.addEventListener("submit", e => {
   let env = d.getElementById("env");
   let property = {
     name : d.getElementById("name").value,
-    ubication : d.getElementById("ubication").value,
+    ubic : d.getElementById("ubication").value,
     tel : d.getElementById("tel").value,
     ant : d.getElementById("ant").value,
-    services : d.getElementById("services").value,
+    serv: d.getElementById("services").value,
     multi : d.getElementById("multi").value,
     type : d.getElementById("type").value,
     valueSelect : env.options[env.selectedIndex].value,
