@@ -9,8 +9,33 @@ let propietario,
 const $body = document.body,
       ui = new UI();
 
-class Inmobiliaria 
-{ 
+class Inmobiliaria {
+  newProperty (e,d) {
+    e.preventDefault();
+    const form = d.getElementById('propiedad-form')
+    if(e.target === form){
+    // Override the default Form behaviour
+    // Getting Form Values
+    const name = d.getElementById("name").value,
+      ubication = d.getElementById("ubication").value,
+      tel = d.getElementById("tel").value,
+      ant = d.getElementById("ant").value,
+      services = d.getElementById("services").value,
+      multi = d.getElementById("multi").value,
+      type = d.getElementById("type").value,
+      env = d.getElementById("env"),
+      valueSelect = env.options[env.selectedIndex].value,
+      prop = propietario
+      let availability = 'Disponible';
+      if(d.getElementById("exampleRadios2").checked == true){
+          availability = 'No disponible';
+      }
+      idProp++;
+      const property = new Property(idProp,name, ubication, tel,valueSelect,ant,services,multi,type,availability,prop);
+      inm.addProperty(property);
+    }
+    
+  }
    addProperty = async (property = {}) => { 
     try {
       const res = await fetch(`http://localhost:3000/propiedades`,
@@ -109,8 +134,7 @@ class Inmobiliaria
   }
 }
 
-
-const inm = new Inmobiliaria();
+const inm = new Inmobiliaria(document);
 
 // DOM Events
 d.addEventListener('click', e=> {
@@ -150,31 +174,6 @@ d.addEventListener('DOMContentLoaded', e=>{
     })
   
 })
-d.addEventListener("submit", function (e) {
-    e.preventDefault();
-    if(e.target.matches('#propiedad-form')){
-    // Override the default Form behaviour
-    // Getting Form Values
-    const name = d.getElementById("name").value,
-      ubication = d.getElementById("ubication").value,
-      tel = d.getElementById("tel").value,
-      ant = d.getElementById("ant").value,
-      services = d.getElementById("services").value,
-      multi = d.getElementById("multi").value,
-      type = d.getElementById("type").value,
-      env = d.getElementById("env"),
-      valueSelect = env.options[env.selectedIndex].value,
-      prop = propietario
-      let availability = 'Disponible';
-      if(d.getElementById("exampleRadios2").checked == true){
-          availability = 'No disponible';
-      }
-                idProp++;
-                const property = new Property(idProp,name, ubication, tel,valueSelect,ant,services,multi,type,availability,prop);
-                console.log(property.getPropietario().NombreApellido);
-                console.log(idProp);
-      inm.addProperty(property);
-    }
-    
-});
+
+d.addEventListener("submit", e => { inm.newProperty(e,d) });
 
