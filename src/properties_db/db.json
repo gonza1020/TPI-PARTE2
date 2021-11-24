@@ -125,6 +125,27 @@
         "Telefono": 3777523238,
         "Email": "gonzalozoloaga44@gmail.com"
       }
+    },
+    {
+      "id": 7,
+      "nombre": "Casa quinta",
+      "ubicacion": "San Luis del palmar",
+      "telefono": "12345678",
+      "cantAmbientes": "3",
+      "antiguedad": "4",
+      "servicios": "LUZ-AGUA",
+      "multimedia": "",
+      "tipo": "Venta",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 5,
+        "NombreApellido": "Franco Corro",
+        "DNI": 36634885,
+        "CUIL": 23366348859,
+        "FechaNacimiento": "02/01/93",
+        "Telefono": 3777646767,
+        "Email": "francocorro@gmail.com"
+      }
     }
   ],
   "clientes": [
