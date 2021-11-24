@@ -62,6 +62,48 @@
         "Telefono": 3777523238,
         "Email": "gonzalozoloaga44@gmail.com"
       }
+    },
+    {
+      "id": 4,
+      "nombre": "Casa Blanca",
+      "ubicacion": "Bella Vista",
+      "telefono": "03777646767",
+      "cantAmbientes": "3",
+      "antiguedad": "10",
+      "servicios": "Agua",
+      "multimedia": "",
+      "tipo": "Depto",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 5,
+      "nombre": "gr",
+      "ubicacion": "gg",
+      "telefono": "2",
+      "cantAmbientes": "1",
+      "antiguedad": "2",
+      "servicios": "Agua Luz",
+      "multimedia": "C:\\fakepath\\Carrizo - ratio 16-1 - radio 1-1.jpg",
+      "tipo": "Depto",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
     }
   ],
   "clientes": [
