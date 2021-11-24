@@ -188,6 +188,27 @@
         "Telefono": 3794267995,
         "Email": "sam@email.com"
       }
+    },
+    {
+      "id": 10,
+      "nombre": "Matias Emanuel Acosta",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 2,
+        "NombreApellido": "Gonzalo Zoloaga",
+        "DNI": 42792711,
+        "CUIL": 20427927114,
+        "FechaNacimiento": "21/09/00",
+        "Telefono": 3777523238,
+        "Email": "gonzalozoloaga44@gmail.com"
+      }
     }
   ],
   "clientes": [

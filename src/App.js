@@ -73,8 +73,7 @@ class Inmobiliaria {
           $template.querySelector('#serv-prop').textContent = `Servicios: ${c.servicios}`;
           $template.querySelector('#disp-prop').innerHTML = `<strong>${c.disponibilidad}</strong>`;
           $template.querySelector('#dir-prop').textContent = `Ubicacion: ${c.ubicacion}`;
-          $template.querySelector('#img-prop').src = c.multimedia;
-  
+          $template.querySelector('#img-prop').setAttribute("src","https://placeimg.com/640/480/arch");
           let $clone = d.importNode($template,true);
           $fragment.appendChild($clone)
       });
@@ -89,7 +88,8 @@ class Inmobiliaria {
             $template.querySelector('#serv-prop').textContent = c.servicios;
             $template.querySelector('#disp-prop').textContent = c.disponibilidad;
             $template.querySelector('#dir-prop').textContent = c.ubicacion;
-            $template.querySelector('#img-prop').src = "home/gonzalo/Escritorio/GIT/TPI-PARTE2/assets/casa2.jpeg";
+            $template.querySelector('#img-prop').setAttribute("src","https://placeimg.com/640/480/arch");
+
             cont ++;
             let $clone = d.importNode($template,true);
             console.log($clone);
