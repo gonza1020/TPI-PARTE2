@@ -38,16 +38,12 @@ class Inmobiliaria {
   }
    addProperty = async (property = {}) => { 
     try {
-      const res = await fetch(`http://localhost:3000/propiedades`,
-                  {   method:'POST',
-                      headers: {
-                          'Content-Type': 'application/json'
-                      },
-                      body: JSON.stringify(property),
-                      redirect: 'follow'
-                  });
-                  if(!res.ok) throw {status:res.status,message:res.statusText}   
-  
+          const instance = axios.create({
+            headers: {
+                'Content-Type': 'application/json'
+            }
+            });
+            let res = await instance.post(`http://localhost:3000/propiedades`,property)  
       } catch (error) {
         console.log(error.message)
     }finally { 
@@ -105,15 +101,14 @@ class Inmobiliaria {
       
     }
   }
-  async  searchIcon(){
+  async  buscarCliente(dniCliente){
     try {
       const $tabla = d.querySelector('.table');
-      const $input = d.querySelector('form input');
       let res = await fetch ('http://localhost:3000/clientes');
       let clientes = await res.json();
       if (!res.ok) throw {error}
       clientes.forEach(c => {
-        if (parseInt($input.value) === c.DNI) { 
+        if (parseInt(dniCliente) === c.DNI) { 
           propietario = c
         }
   
@@ -141,7 +136,7 @@ d.addEventListener('click', e=> {
   if (e.target.matches('.cliente')) { 
     ui.getPage({url:'/form.html',success:(resp) => {$body.innerHTML = resp} })
   }else if(e.target.matches('.search-icon')){
-    inm.searchIcon();
+    inm.buscarCliente();
   }else if(e.target.matches('.c1-cliente *')){
     console.log("Prueba ")
     ui.getPage({url:'/cliente.html', success:(resp) => {$body.innerHTML = resp}})
@@ -161,7 +156,8 @@ d.addEventListener('click', e=> {
 d.addEventListener('keypress', async e=> { 
   if (e.key == "Enter" ) { 
     e.preventDefault();
-    inm.searchIcon();
+    const $input = d.querySelector('form input');
+    inm.buscarCliente($input.value);
   }
 })
 
