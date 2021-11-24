@@ -14,7 +14,7 @@ class Inmobiliaria {
       }
       idProp++;
       const property = new Property(idProp,name, ubic, tel,valueSelect,ant,serv,multi,type,availability,prop);
-      addProperty(property);
+      this.addProperty(property);
     
   }
    addProperty = async (property = {}) => { 
