@@ -62,12 +62,14 @@ class Inmobiliaria {
           alert('Registro confirmado')
     } 
   }
-  async getProperties($fragment,$template){
+  async getProperties($fragment,$template,$dni){
     try {
       let res = await fetch ('http://localhost:3000/propiedades');
       let propiedades = await res.json();
       if (!res.ok) throw {error}
-      propiedades.forEach(c => {
+
+      if(!$dni){
+        propiedades.forEach(c => {
           $template.querySelector('#tit-prop').textContent = c.nombre;
           $template.querySelector('#serv-prop').textContent = c.servicios;
           $template.querySelector('#disp-prop').textContent = c.disponibilidad;
@@ -77,6 +79,23 @@ class Inmobiliaria {
           let $clone = d.importNode($template,true);
           $fragment.appendChild($clone)
       });
+      }else{
+        console.log($dni)
+        propiedades.forEach(c => {
+          if(c.propietario.DNI === parseInt($dni)){
+            $template.querySelector('#tit-prop').textContent = c.nombre;
+            $template.querySelector('#serv-prop').textContent = c.servicios;
+            $template.querySelector('#disp-prop').textContent = c.disponibilidad;
+            $template.querySelector('#dir-prop').textContent = c.ubicacion;
+            $template.querySelector('#img-prop').src = "home/gonzalo/Escritorio/GIT/TPI-PARTE2/assets/casa2.jpeg";
+    
+            let $clone = d.importNode($template,true);
+            console.log($clone);
+            $fragment.appendChild($clone)
+          }
+
+      });
+      }   
       $body.appendChild($fragment)
     } catch (error) {
       console.log(error);
@@ -133,14 +152,26 @@ d.addEventListener('click', e=> {
     llamarUI('/form.html')
     console.log(propietario)
 
-  }else if(e.target.matches('.search-icon')){
+  }else if(e.target.matches('.client-search')){
     inm.buscarCliente();
   }else if(e.target.matches('.c1-cliente *')){
     console.log("Prueba ")
     llamarUI('/cliente.html')
   }else if(e.target.matches('.catalog *')){
     mostrarCatalogo();  
-  }
+  }else if(e.target.matches('.btn-search')){
+    console.log('Buscador');
+    ui.getPage({url:'/propClient.html', success:(resp) => {
+      $body.innerHTML = resp
+    }})
+}else if(e.target.matches('.searchProp')){
+    console.log('pruebaaa')
+    const $dni = d.getElementById('search-client');
+          const $template = d.getElementById('card-prop').content,
+          $fragment = d.createDocumentFragment();
+          console.log($dni.value);
+          inm.getProperties($fragment,$template,$dni.value)
+  };
 })
 d.addEventListener('keyup', async e=> {  
     e.preventDefault();
