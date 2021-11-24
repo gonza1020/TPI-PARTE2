@@ -131,7 +131,6 @@ class Inmobiliaria {
   }
 }
 
-
 const inm = new Inmobiliaria();
 const d = document;
 const $body = document.body;
