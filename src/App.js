@@ -159,7 +159,7 @@ const mostrarCatalogo = () => {
 // DOM Events
 d.addEventListener('click', e=> {
   if (e.target.matches('.cliente')) { 
-    llamarUI('/form.html')
+    llamarUI('/https://gonza1020.github.io/TPI-PARTE2/src/form.html')
     console.log(propietario)
 
   }else if(e.target.matches('.client-search')){
