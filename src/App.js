@@ -163,7 +163,7 @@ d.addEventListener('click', e=> {
     console.log(propietario)
 
   }else if(e.target.matches('.client-search')){
-    inm.buscarCliente();
+    //inm.buscarCliente();
   }else if(e.target.matches('.c1-cliente')){
     console.log("Prueba ")
     llamarUI('https://gonza1020.github.io/TPI-PARTE2/src/cliente.html')
