@@ -59,6 +59,7 @@ class Inmobiliaria {
               </div>
             </div>
           </div>`)
+          alert('Registro confirmado')
     } 
   }
   async getProperties($fragment,$template){
@@ -90,6 +91,7 @@ class Inmobiliaria {
       if (!res.ok) throw {error}
       clientes.forEach(c => {
         if (parseInt(dniCliente) === c.DNI) { 
+          console.log('hola')
           propietario = c
         }
       });
@@ -128,7 +130,9 @@ const mostrarCatalogo = () => {
 // DOM Events
 d.addEventListener('click', e=> {
   if (e.target.matches('.cliente')) { 
-    llamarUI('/form.html',)
+    llamarUI('/form.html')
+    console.log(propietario)
+
   }else if(e.target.matches('.search-icon')){
     inm.buscarCliente();
   }else if(e.target.matches('.c1-cliente *')){
@@ -141,8 +145,10 @@ d.addEventListener('click', e=> {
 d.addEventListener('keyup', async e=> {  
     e.preventDefault();
     const $input = d.querySelector('form input');
-    inm.buscarCliente($input.value);
-  
+    if(e.target === $input){
+      inm.buscarCliente($input.value);
+
+    }  
 })
 
 d.addEventListener('DOMContentLoaded', e=>{
@@ -152,5 +158,7 @@ d.addEventListener('DOMContentLoaded', e=>{
 
 d.addEventListener("submit", e => { 
   inm.newProperty(e,d) 
+  console.log(propietario)
+
 });
 
