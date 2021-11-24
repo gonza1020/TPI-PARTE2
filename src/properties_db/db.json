@@ -191,7 +191,11 @@
     },
     {
       "id": 10,
+<<<<<<< HEAD
       "nombre": "Casa rosada",
+=======
+      "nombre": "Matias Emanuel Acosta",
+>>>>>>> f29af098185e91a5476c0fc60d4bfb6e3cd6437c
       "ubicacion": "",
       "telefono": "",
       "cantAmbientes": "1",
@@ -201,6 +205,7 @@
       "tipo": "",
       "disponibilidad": "Disponible",
       "propietario": {
+<<<<<<< HEAD
         "id": 1,
         "NombreApellido": "Matias Acosta",
         "DNI": 43109981,
@@ -241,6 +246,8 @@
       "tipo": "",
       "disponibilidad": "Disponible",
       "propietario": {
+=======
+>>>>>>> f29af098185e91a5476c0fc60d4bfb6e3cd6437c
         "id": 2,
         "NombreApellido": "Gonzalo Zoloaga",
         "DNI": 42792711,
@@ -251,6 +258,7 @@
       }
     },
     {
+<<<<<<< HEAD
       "id": 13,
       "nombre": "gonz anduvo nae gilll",
       "telefono": "",
@@ -275,10 +283,20 @@
       "telefono": "",
       "cantAmbientes": "1",
       "antiguedad": "",
+=======
+      "id": 11,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+>>>>>>> f29af098185e91a5476c0fc60d4bfb6e3cd6437c
       "multimedia": "",
       "tipo": "",
       "disponibilidad": "Disponible",
       "propietario": {
+<<<<<<< HEAD
         "id": 2,
         "NombreApellido": "Gonzalo Zoloaga",
         "DNI": 42792711,
@@ -294,10 +312,30 @@
       "telefono": "",
       "cantAmbientes": "1",
       "antiguedad": "",
+=======
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 12,
+      "nombre": "",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+>>>>>>> f29af098185e91a5476c0fc60d4bfb6e3cd6437c
       "multimedia": "",
       "tipo": "",
       "disponibilidad": "Disponible",
       "propietario": {
+<<<<<<< HEAD
         "id": 2,
         "NombreApellido": "Gonzalo Zoloaga",
         "DNI": 42792711,
@@ -313,6 +351,25 @@
       "telefono": "",
       "cantAmbientes": "1",
       "antiguedad": "",
+=======
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 13,
+      "nombre": "wep",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+>>>>>>> f29af098185e91a5476c0fc60d4bfb6e3cd6437c
       "multimedia": "",
       "tipo": "",
       "disponibilidad": "Disponible",

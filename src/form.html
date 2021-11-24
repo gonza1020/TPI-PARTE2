@@ -9,21 +9,22 @@
                 <div class="card-header">
                     <h4>Agregar una Propiedad</h4>
                 </div>
-                <form id="propiedad-form" class="card-body">
+                <form id="propiedad-form" class="card-body needs-validation">
                     <div class="row">
                         <div class="col-sm-1">
                             <input class="form-control" type="text" placeholder="id" readonly id="idProp">
-                          </div>
+                        </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" id="name" placeholder="Nombre"
-                                    class="form-control">
+                                <input type="text" id="name" placeholder="Nombre" class="form-control" required>
+                                <div class="invalid-feedback">
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-5">
                             <div class="form-group">
                                 <input type="text" id="ubication" placeholder="Ubicacion"
-                                    class="form-control">
+                                    class="form-control" required>
                             </div>
                         </div>
                     </div>
@@ -32,7 +33,7 @@
                             <div class="form-group">
                                 <label>Telefono</label>
                                 <input type="number" id="tel" placeholder="Telefono"
-                                    class="form-control">
+                                    class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group col-md-2">
@@ -48,7 +49,7 @@
                         <div class="form-group col-md-2">
                             <label>Antiguedad</label>
                             <input type="number" placeholder="Años"
-                                class="form-control" id="ant">
+                                class="form-control" id="ant" required>
                         </div>
                     </div>
                     <div class="row">
@@ -60,7 +61,7 @@
                         <div class="form-group col-md-4">
                             <label>Tipo</label>
                             <input type="text" id="type" placeholder="Tipo"
-                                class="form-control">
+                                class="form-control" required>
                         </div>
                     </div>
                     <div class="row">
