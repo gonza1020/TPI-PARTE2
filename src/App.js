@@ -69,13 +69,15 @@ class Inmobiliaria {
   
     } 
   }
-  async getProperties($fragment,$template){
+  async getProperties($fragment,$template,$dni){
     try {
       let res = await fetch ('http://localhost:3000/propiedades');
       let propiedades = await res.json();
       console.log(propiedades);
       if (!res.ok) throw {error}
-      propiedades.forEach(c => {
+
+      if(!$dni){
+        propiedades.forEach(c => {
           $template.querySelector('#tit-prop').textContent = c.nombre;
           $template.querySelector('#serv-prop').textContent = c.servicios;
           $template.querySelector('#disp-prop').textContent = c.disponibilidad;
@@ -86,17 +88,24 @@ class Inmobiliaria {
           console.log($clone);
           $fragment.appendChild($clone)
       });
+      }else{
+        console.log($dni)
+        propiedades.forEach(c => {
+          if(c.propietario.DNI === parseInt($dni)){
+            $template.querySelector('#tit-prop').textContent = c.nombre;
+            $template.querySelector('#serv-prop').textContent = c.servicios;
+            $template.querySelector('#disp-prop').textContent = c.disponibilidad;
+            $template.querySelector('#dir-prop').textContent = c.ubicacion;
+            $template.querySelector('#img-prop').src = "home/gonzalo/Escritorio/GIT/TPI-PARTE2/assets/casa2.jpeg";
+    
+            let $clone = d.importNode($template,true);
+            console.log($clone);
+            $fragment.appendChild($clone)
+          }
+
+      });
+      }   
       $body.appendChild($fragment)
-      if (propietario) { 
-         /* $tabla.insertAdjacentHTML('afterend',
-        `<div>
-          <p><mark>Nombre: ${cliente.NombreApellido}</mark></p>
-          <p><mark>DNI: ${cliente.DNI}</mark></p>`)  */
-  
-        $tabla.querySelector(".client-table").rows[0].cells[0].innerHTML = `<p>${propietario.NombreApellido}</p>`
-        $tabla.querySelector(".client-table").rows[0].cells[1].innerHTML = `<p>${propietario.DNI}</p>`
-        $tabla.querySelector(".client-table").rows[0].cells[2].innerHTML = `<button type="button" class="btn cliente btn-primary">Seleccionar</button>`
-      }
     } catch (error) {
       
     }
@@ -121,7 +130,7 @@ class Inmobiliaria {
   
         $tabla.querySelector(".client-table").rows[0].cells[0].innerHTML = `<p>${propietario.NombreApellido}</p>`
         $tabla.querySelector(".client-table").rows[0].cells[1].innerHTML = `<p>${propietario.DNI}</p>`
-        $tabla.querySelector(".client-table").rows[0].cells[2].innerHTML = `<button type="button" class="btn cliente btn-primary">Seleccionar</button>`
+        $tabla.querySelector(".client-table").rows[0].cells[2].innerHTML = `<button type="button" class="btn btn-cliente btn-primary">Seleccionar</button>`
       }
     } catch (error) {
       
@@ -129,35 +138,50 @@ class Inmobiliaria {
   }
 }
 
-const inm = new Inmobiliaria(document);
+const inm = new Inmobiliaria();
 
 // DOM Events
 d.addEventListener('click', e=> {
-  if (e.target.matches('.cliente')) { 
+  if (e.target.matches('.btn-cliente')) { 
     ui.getPage({url:'/form.html',success:(resp) => {$body.innerHTML = resp} })
-  }else if(e.target.matches('.search-icon')){
+  }else if(e.target.matches('.client-search')){
+    console.log('Prueba busqueda')
     inm.buscarCliente();
-  }else if(e.target.matches('.c1-cliente *')){
+  }else if(e.target.matches('.c1-cliente')){
     console.log("Prueba ")
     ui.getPage({url:'/cliente.html', success:(resp) => {$body.innerHTML = resp}})
   }else if(e.target.matches('.catalog *')){
     ui.getPage({url:'/catalog.html',success:(resp) => {
-      $body.innerHTML = resp
+      $body.innerHTML = resp;
       const $template = d.getElementById('card-prop').content,
             $fragment = d.createDocumentFragment();
             inm.getProperties($fragment,$template)
-    } });
+    }});
 
-    
-     // $fragment = d.createDocumentFragment();
-        
-  }
+  }else if(e.target.matches('.btn-search')){
+        console.log('Buscador');
+        ui.getPage({url:'/propClient.html', success:(resp) => {
+          $body.innerHTML = resp
+        }})
+  }else if(e.target.matches('.searchProp')){
+
+    console.log('Probando buscador');
+    const $dni = d.getElementById('search-client');
+          const $template = d.getElementById('card-prop').content,
+          $fragment = d.createDocumentFragment();
+          console.log($dni.value);
+          inm.getProperties($fragment,$template,$dni.value)
+  };
 })
+
+
 d.addEventListener('keypress', async e=> { 
   if (e.key == "Enter" ) { 
     e.preventDefault();
     const $input = d.querySelector('form input');
     inm.buscarCliente($input.value);
+    
+
   }
 })
 
