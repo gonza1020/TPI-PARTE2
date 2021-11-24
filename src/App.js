@@ -95,7 +95,9 @@ d.addEventListener('keypress', async e=> {
 
 
 document.addEventListener('DOMContentLoaded', e=>{
-    ui.getPage({url:'/cliente.html',
+
+
+    ui.getPage({url:'/catalog.html',
       success: (resp) => { 
         $body.innerHTML = resp;
       }  
