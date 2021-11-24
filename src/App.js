@@ -1,14 +1,6 @@
 import {Property}from "./Property.js";
 import { UI } from "./UI.js";
 
-//variables
-
-const d = document
-let propietario,
-    idProp;
-const $body = document.body,
-      ui = new UI();
-
 class Inmobiliaria {
   newProperty (e,d) {
     e.preventDefault();
@@ -47,33 +39,33 @@ class Inmobiliaria {
       } catch (error) {
         console.log(error.message)
     }finally { 
-      ui.getPage({url:'/succes.html',success:(resp)=> $body.innerHTML = `${resp} <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Domus 2.0</h5>
-          </div>
-        <div class="modal-body">
-          PROPIEDAD CARGADA CON EXITO<br>
-          <div>
-          <p><b>Propiedad: ${property.getNombre()}</b></p> 
-          <p><b>Ubicacion: ${property.ubicacion}</b></p> 
-          <p><b>Telefono: ${property.telefono}</b></p> 
-          <p><b>Propietario: ${property.propietario.NombreApellido}</b></p>
-          <p><b>DNI: ${property.propietario.DNI}</b></p>
-  </div>
-        </div>
-        <div class="modal-footer">
-        </div>
-      </div>
-    </div>`})
-  
+        llamarUI('/succes.html', 
+        `<div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Domus 2.0</h5>
+                </div>
+                <div class="modal-body">
+                  PROPIEDAD CARGADA CON EXITO<br>
+                  <div>
+                    <p><b>Propiedad: ${property.getNombre()}</b></p> 
+                    <p><b>Ubicacion: ${property.ubicacion}</b></p> 
+                    <p><b>Telefono: ${property.telefono}</b></p> 
+                    <p><b>Propietario: ${property.propietario.NombreApellido}</b></p>
+                    <p><b>DNI: ${property.propietario.DNI}</b></p>
+                  </div>
+                </div>
+              <div class="modal-footer">
+              </div>
+            </div>
+          </div>`)
+          alert('Registro confirmado')
     } 
   }
   async getProperties($fragment,$template,$dni){
     try {
       let res = await fetch ('http://localhost:3000/propiedades');
       let propiedades = await res.json();
-      console.log(propiedades);
       if (!res.ok) throw {error}
 
       if(!$dni){
@@ -85,7 +77,6 @@ class Inmobiliaria {
           $template.querySelector('#img-prop').src = "home/gonzalo/Escritorio/GIT/TPI-PARTE2/assets/casa2.jpeg";
   
           let $clone = d.importNode($template,true);
-          console.log($clone);
           $fragment.appendChild($clone)
       });
       }else{
@@ -107,65 +98,74 @@ class Inmobiliaria {
       }   
       $body.appendChild($fragment)
     } catch (error) {
-      
+      console.log(error);
     }
   }
   async  buscarCliente(dniCliente){
     try {
+      propietario = null;
       const $tabla = d.querySelector('.table');
       let res = await fetch ('http://localhost:3000/clientes');
       let clientes = await res.json();
       if (!res.ok) throw {error}
       clientes.forEach(c => {
         if (parseInt(dniCliente) === c.DNI) { 
+          console.log('hola')
           propietario = c
         }
-  
       });
-      if (propietario) { 
-         /* $tabla.insertAdjacentHTML('afterend',
-        `<div>
-          <p><mark>Nombre: ${cliente.NombreApellido}</mark></p>
-          <p><mark>DNI: ${cliente.DNI}</mark></p>`)  */
-  
-        $tabla.querySelector(".client-table").rows[0].cells[0].innerHTML = `<p>${propietario.NombreApellido}</p>`
-        $tabla.querySelector(".client-table").rows[0].cells[1].innerHTML = `<p>${propietario.DNI}</p>`
-        $tabla.querySelector(".client-table").rows[0].cells[2].innerHTML = `<button type="button" class="btn btn-cliente btn-primary">Seleccionar</button>`
-      }
+      mostrarCliente(propietario,$tabla);
     } catch (error) {
-      
+      console.log(error)
     }
   }
 }
 
+
 const inm = new Inmobiliaria();
+const d = document;
+const $body = document.body;
+const ui = new UI ();
+let propietario
+let idProp;
+
+const llamarUI = (url,resp) => { 
+  resp ? ui.getPage({url,success: (res)=> $body.innerHTML = `${res}${resp}` }) : ui.getPage({url,success: (res)=> $body.innerHTML = `${res}` });
+  
+}
+const mostrarCliente = ($propietario,$tabla) => {
+  ui.mostrarCliente($propietario,$tabla)
+}
+const mostrarCatalogo = () => { 
+  ui.getPage({url:'/catalog.html',success:(resp) => {
+    $body.innerHTML = resp
+    const $template = d.getElementById('card-prop').content,
+    $fragment = d.createDocumentFragment();
+    inm.getProperties($fragment,$template)
+  } });
+}
+
 
 // DOM Events
 d.addEventListener('click', e=> {
-  if (e.target.matches('.btn-cliente')) { 
-    ui.getPage({url:'/form.html',success:(resp) => {$body.innerHTML = resp} })
+  if (e.target.matches('.cliente')) { 
+    llamarUI('/form.html')
+    console.log(propietario)
+
   }else if(e.target.matches('.client-search')){
-    console.log('Prueba busqueda')
     inm.buscarCliente();
   }else if(e.target.matches('.c1-cliente')){
     console.log("Prueba ")
-    ui.getPage({url:'/cliente.html', success:(resp) => {$body.innerHTML = resp}})
+    llamarUI('/cliente.html')
   }else if(e.target.matches('.catalog *')){
-    ui.getPage({url:'/catalog.html',success:(resp) => {
-      $body.innerHTML = resp;
-      const $template = d.getElementById('card-prop').content,
-            $fragment = d.createDocumentFragment();
-            inm.getProperties($fragment,$template)
-    }});
-
+    mostrarCatalogo();  
   }else if(e.target.matches('.btn-search')){
-        console.log('Buscador');
-        ui.getPage({url:'/propClient.html', success:(resp) => {
-          $body.innerHTML = resp
-        }})
-  }else if(e.target.matches('.searchProp')){
-
-    console.log('Probando buscador');
+    console.log('Buscador');
+    ui.getPage({url:'/propClient.html', success:(resp) => {
+      $body.innerHTML = resp
+    }})
+}else if(e.target.matches('.searchProp')){
+    console.log('pruebaaa')
     const $dni = d.getElementById('search-client');
           const $template = d.getElementById('card-prop').content,
           $fragment = d.createDocumentFragment();
@@ -173,27 +173,23 @@ d.addEventListener('click', e=> {
           inm.getProperties($fragment,$template,$dni.value)
   };
 })
-
-
-d.addEventListener('keypress', async e=> { 
-  if (e.key == "Enter" ) { 
+d.addEventListener('keyup', async e=> {  
     e.preventDefault();
     const $input = d.querySelector('form input');
-    inm.buscarCliente($input.value);
-    
+    if(e.target === $input){
+      inm.buscarCliente($input.value);
 
-  }
+    }  
 })
 
 d.addEventListener('DOMContentLoaded', e=>{
     inm.getProperties()
-    ui.getPage({url:'/menu.html',
-      success: (resp) => { 
-        $body.innerHTML = resp;
-      }  
-    })
-  
+    llamarUI('/menu.html')
 })
 
-d.addEventListener("submit", e => { inm.newProperty(e,d) });
+d.addEventListener("submit", e => { 
+  inm.newProperty(e,d) 
+  console.log(propietario)
+
+});
 
