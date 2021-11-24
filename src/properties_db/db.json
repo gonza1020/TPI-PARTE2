@@ -146,6 +146,27 @@
         "Telefono": 3777646767,
         "Email": "francocorro@gmail.com"
       }
+    },
+    {
+      "id": 8,
+      "nombre": "Casa quinta prueba",
+      "ubicacion": "av pujol 33",
+      "telefono": "4424",
+      "cantAmbientes": "1",
+      "antiguedad": "1",
+      "servicios": "WIFI-AGUA",
+      "multimedia": "",
+      "tipo": "ALQUILER",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
     }
   ],
   "clientes": [
