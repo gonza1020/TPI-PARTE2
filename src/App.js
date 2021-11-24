@@ -137,7 +137,7 @@ d.addEventListener('click', e=> {
     ui.getPage({url:'/form.html',success:(resp) => {$body.innerHTML = resp} })
   }else if(e.target.matches('.search-icon')){
     inm.buscarCliente();
-  }else if(e.target.matches('.c1-cliente *')){
+  }else if(e.target.matches('.c1-cliente')){
     console.log("Prueba ")
     ui.getPage({url:'/cliente.html', success:(resp) => {$body.innerHTML = resp}})
   }else if(e.target.matches('.catalog *')){
