@@ -77,16 +77,16 @@ class Inmobiliaria {
       if (!res.ok) throw {error}
       propiedades.forEach(c => {
           $template.querySelector('#tit-prop').textContent = c.nombre;
-          $template.querySelector('#serv-prop').textContent = c.servicios;
-          $template.querySelector('#disp-prop').textContent = c.disponibilidad;
-          $template.querySelector('#dir-prop').textContent = c.ubicacion;
-          $template.querySelector('#img-prop').src = "home/gonzalo/Escritorio/GIT/TPI-PARTE2/assets/casa2.jpeg";
+          $template.querySelector('#serv-prop').textContent = `Servicios: ${c.servicios}`;
+          $template.querySelector('#disp-prop').innerHTML = `<strong>${c.disponibilidad}</strong>`;
+          $template.querySelector('#dir-prop').textContent = `Ubicacion: ${c.ubicacion}`;
+          $template.querySelector('#img-prop').src = c.multimedia;
   
           let $clone = d.importNode($template,true);
           console.log($clone);
           $fragment.appendChild($clone)
       });
-      $body.appendChild($fragment)
+      $body.querySelector('.catalog-cards').appendChild($fragment)
       if (propietario) { 
          /* $tabla.insertAdjacentHTML('afterend',
         `<div>
@@ -146,13 +146,18 @@ d.addEventListener('click', e=> {
       const $template = d.getElementById('card-prop').content,
             $fragment = d.createDocumentFragment();
             inm.getProperties($fragment,$template)
-    } });
-
+    }}
     
-     // $fragment = d.createDocumentFragment();
-        
+    );
+  }else if (e.target.matches('.back-btn')) {
+    console.log("boton atras apretado")
+    if (ui.getUrl() == '/catalog.html') {
+      console.log("Reconoce url")
+      ui.getPage({url:'/menu.html',success:(resp) => {$body.innerHTML = resp} })
+    }
   }
 })
+
 d.addEventListener('keypress', async e=> { 
   if (e.key == "Enter" ) { 
     e.preventDefault();

@@ -146,6 +146,48 @@
         "Telefono": 3794267995,
         "Email": "sam@email.com"
       }
+    },
+    {
+      "id": 8,
+      "nombre": "Juan Cruz Carrizo",
+      "ubicacion": "",
+      "telefono": "03777646767",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
+    },
+    {
+      "id": 9,
+      "nombre": "hijo",
+      "ubicacion": "",
+      "telefono": "",
+      "cantAmbientes": "1",
+      "antiguedad": "",
+      "servicios": "",
+      "multimedia": "",
+      "tipo": "",
+      "disponibilidad": "Disponible",
+      "propietario": {
+        "id": 1,
+        "NombreApellido": "Matias Acosta",
+        "DNI": 43109981,
+        "CUIL": 20431099811,
+        "FechaNacimiento": "18/12/00",
+        "Telefono": 3794267995,
+        "Email": "sam@email.com"
+      }
     }
   ],
   "clientes": [
