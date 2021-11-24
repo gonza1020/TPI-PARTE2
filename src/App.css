@@ -2,7 +2,6 @@ body{
     height: 100vh;
 }
 .container{
-    margin-top: 0px !important;
     margin: auto;
 }
 .success, .error {
